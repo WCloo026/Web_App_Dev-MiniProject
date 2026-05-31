@@ -476,3 +476,126 @@
         padding: 0.5rem;
     }
 }
+
+/* ========================================
+   PDF MENU CTA SECTION
+   ======================================== */
+.pdf-menu-section {
+    background-color: var(--bg-primary);
+    padding: var(--spacing-lg) 0;
+}
+
+.pdf-menu-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px rgba(255, 140, 0, 0.25);
+    overflow: hidden;
+}
+
+.pdf-menu-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.pdf-menu-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pdf-menu-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.pdf-menu-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.pdf-menu-text h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.2rem;
+}
+
+.pdf-menu-text p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.btn-see-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background-color: white;
+    color: var(--primary);
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-see-more:hover {
+    background-color: #FFF8F0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: var(--primary-dark);
+}
+
+/* ========================================
+   PDF MENU CTA SECTION
+   ======================================== */
+.pdf-menu-section {
+    background-color: #F5F5DC;
+    padding: var(--spacing-xl) 0;
+}
+
+.pdf-menu-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: transparent;
+    box-shadow: none;
+}
+
+.pdf-menu-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
+}
+
+.btn-see-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 2rem;
+    background-color: #DC3545;
+    color: #FFFFFF;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-see-more:hover {
+    background-color: #C82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+    color: #FFFFFF;
+}
+
