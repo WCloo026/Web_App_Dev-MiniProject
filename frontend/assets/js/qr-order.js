@@ -26,7 +26,53 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollers();
     initDineIn();
     updateCartBadge();
+    // Add to DOMContentLoaded:
+    initQrNav();
 });
+
+// Add this function:
+function initQrNav() {
+    const navHome = document.getElementById('navHome');
+    const navMenu = document.getElementById('navMenu');
+    const navCart = document.getElementById('navCart');
+    const navOrders = document.getElementById('navOrders');
+    const navAll = [navHome, navMenu, navCart, navOrders];
+
+    navHome.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('menuOrderScreen').style.display = 'none';
+        document.getElementById('orderSummaryBar').style.display = 'none';
+        document.getElementById('tableSelectionScreen').style.display = 'block';
+        setActiveNav(navHome);
+    });
+
+    navMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('tableSelectionScreen').style.display = 'none';
+        document.getElementById('menuOrderScreen').style.display = 'block';
+        document.getElementById('orderSummaryBar').style.display = 'block';
+        setActiveNav(navMenu);
+    });
+
+    navCart.addEventListener('click', (e) => {
+        e.preventDefault();
+        const panel = document.getElementById('orderItemsPanel');
+        const icon = document.getElementById('orderToggleIcon');
+        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        icon.classList.toggle('open', panel.style.display !== 'none');
+        setActiveNav(navCart);
+    });
+
+    navOrders.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'order-status.html';
+    });
+
+    function setActiveNav(active) {
+        navAll.forEach(n => n.classList.remove('active'));
+        active.classList.add('active');
+    }
+}
 
 // ========================================
 // TABLE & PAX SCROLLERS

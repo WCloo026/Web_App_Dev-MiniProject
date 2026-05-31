@@ -21,16 +21,6 @@
                 <img src="../../assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
                 <h1>Restoran SUP TULANG ZZ</h1>
             </a>
-            
-            <div class="header-icons">
-                <a href="cart.html" class="icon-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge" id="cartBadge">0</span>
-                </a>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
         </div>
     </header>
 
@@ -233,13 +223,24 @@
     <!-- ========== TOAST ========== -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- ========== BOTTOM MOBILE NAVIGATION ========== -->
-    <nav class="mobile-nav">
-        <a href="../../index.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="../menu.html"><i class="fas fa-utensils"></i><span>Menu</span></a>
-        <a href="cart.html"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
-        <a href="order-status.html"><i class="fas fa-receipt"></i><span>Orders</span></a>
-        <a href="../../profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
+    <!-- ========== BOTTOM MOBILE NAVIGATION (QR Order Internal) ========== -->
+    <nav class="mobile-nav" id="qrMobileNav">
+        <a href="#" id="navHome" class="active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" id="navMenu">
+            <i class="fas fa-utensils"></i>
+            <span>Menu</span>
+        </a>
+        <a href="#" id="navCart">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Cart</span>
+        </a>
+        <a href="#" id="navOrders">
+            <i class="fas fa-receipt"></i>
+            <span>Orders</span>
+        </a>
     </nav>
 
     <script src="../../assets/js/qr-order.js"></script>
