@@ -928,7 +928,7 @@ img {
    FOOTER
    ======================================== */
 .footer {
-    background-color: var(--bg-footer);
+    background-color: var(--bg-footer); /* Old Green： #205d05*/
     color: #CCCCCC;
     padding: var(--spacing-2xl) 0 var(--spacing-md);
 }
