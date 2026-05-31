@@ -123,8 +123,8 @@ img {
 }
 
 .logo-img {
-    width: 45px;
-    height: 45px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary);
@@ -244,8 +244,8 @@ img {
 
 .btn-login:hover {
     background-color: var(--primary) !important;
-    color: #F5F5DC !important;
-    border-color: #000000 !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
 }
 
 /* Register: Slightly dims the background and adds a subtle lift effect */
