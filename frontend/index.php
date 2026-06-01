@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran SUP TULANG ZZ - Order Online</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ========== TOP HEADER with Glass Effect ========== -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo + Restaurant Name (Click to Home) -->
+            <a href="index.php" class="logo">
+                <img src="assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
+                <h1>Restoran SUP TULANG ZZ</h1>
+            </a>
+            
+            <!-- Cart Icon Only -->
+            <div class="header-icons">
+                <a href="pages/customer/cart.php" class="icon-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" id="desktopNav">
+            <ul>
+                <li><a href="index.php" class="active">Home</a></li>
+                <li><a href="pages/menu.php">Menu</a></li>
+                <li><a href="pages/news-events.php">News & Events</a></li>
+                <li><a href="pages/about.php">About</a></li>
+                <li><a href="pages/contact.php">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="register.php" class="btn-register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero-video">
+            <img src="assets/images/Banner.jpeg" alt="Restaurant ambiance">
+        </div>
+        
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Welcome to Restoran Sup Tulang ZZ</h1>
+                <p class="hero-subtitle">Delicious food delivered fresh to your table</p>
+                
+                <div class="hero-buttons">
+                    <a href="pages/menu.php" class="btn-primary">
+                        <i class="fas fa-utensils"></i> View Our Menu
+                    </a>
+                    <a href="pages/contact.php" class="btn-secondary">
+                        <i class="fas fa-phone"></i> Contact
+                    </a>
+                </div>
+                
+                <!-- Promotion Banner -->
+                <div class="promo-banner">
+                    <span class="promo-tag">🔥 Special Offer</span>
+                    <p>20% OFF on your first online order! Use code: <strong>WELCOME20</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TODAY'S SPECIAL ========== -->
+    <section class="section specials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Today's Special</h2>
+                <p>Chef's recommended dishes of the day</p>
+            </div>
+            
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="card-image">
+                        <img src="assets/images/food1.jpg" alt="Nasi Lemak">
+                        <span class="discount-badge">-15%</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Nasi Lemak</h3>
+                        <p class="description">Fragrant coconut rice with sambal, egg, and anchovies</p>
+                        <div class="price-row">
+                            <span class="price">RM 8.00</span>
+                            <span class="old-price">RM 9.50</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(1, 'Nasi Lemak', 8.00)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="card-image">
+                        <img src="assets/images/food2.jpg" alt="Chicken Chop">
+                        <span class="discount-badge">-10%</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chicken Chop</h3>
+                        <p class="description">Grilled chicken with mushroom sauce and vegetables</p>
+                        <div class="price-row">
+                            <span class="price">RM 15.00</span>
+                            <span class="old-price">RM 16.50</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(2, 'Chicken Chop', 15.00)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="card-image">
+                        <img src="assets/images/food3.jpg" alt="Special Drink">
+                        <span class="discount-badge">-20%</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mango Smoothie</h3>
+                        <p class="description">Fresh mango blended with yogurt and honey</p>
+                        <div class="price-row">
+                            <span class="price">RM 6.50</span>
+                            <span class="old-price">RM 8.00</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart(3, 'Mango Smoothie', 6.50)">
+                            <i class="fas fa-plus"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== POPULAR MENU ========== -->
+    <section class="section popular">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Menu</h2>
+                <p>Most ordered by our customers</p>
+            </div>
+            
+            <div class="popular-grid">
+                <div class="popular-item">
+                    <img src="assets/images/menu1.jpg" alt="Tom Yum Soup">
+                    <h3>Tom Yum Soup</h3>
+                    <span class="rating">⭐ 4.8</span>
+                </div>
+                
+                <div class="popular-item">
+                    <img src="assets/images/menu2.jpg" alt="Fried Rice">
+                    <h3>Fried Rice</h3>
+                    <span class="rating">⭐ 4.7</span>
+                </div>
+                
+                <div class="popular-item">
+                    <img src="assets/images/menu3.jpg" alt="Iced Lemon Tea">
+                    <h3>Iced Lemon Tea</h3>
+                    <span class="rating">⭐ 4.9</span>
+                </div>
+                
+                <div class="popular-item">
+                    <img src="assets/images/menu4.jpg" alt="Satay">
+                    <h3>Chicken Satay</h3>
+                    <span class="rating">⭐ 4.6</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATEGORIES ========== -->
+    <section class="section categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse Categories</h2>
+                <p>Find what you're craving</p>
+            </div>
+            
+            <div class="category-grid">
+                <a href="pages/menu.php?category=main" class="category-card">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <h3>Main Course</h3>
+                    <p>12 items</p>
+                </a>
+                
+                <a href="pages/menu.php?category=drinks" class="category-card">
+                    <i class="fas fa-coffee"></i>
+                    <h3>Drinks</h3>
+                    <p>8 items</p>
+                </a>
+                
+                <a href="pages/menu.php?category=dessert" class="category-card">
+                    <i class="fas fa-ice-cream"></i>
+                    <h3>Desserts</h3>
+                    <p>6 items</p>
+                </a>
+                
+                <a href="pages/menu.php?category=snacks" class="category-card">
+                    <i class="fas fa-cookie"></i>
+                    <h3>Snacks</h3>
+                    <p>10 items</p>
+                </a>
+                
+                <a href="pages/menu.php?category=soup" class="category-card">
+                    <i class="fas fa-mug-hot"></i>
+                    <h3>Soup</h3>
+                    <p>5 items</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT US ========== -->
+    <section class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-video">
+                    <video poster="assets/images/promo-video-poster.jpeg" controls>
+                        <source src="assets/videos/promo.mp4" type="video/mp4">
+                        Your browser does not support video.
+                    </video>
+                </div>
+                
+                <div class="about-content">
+                    <h2>About Our Restaurant</h2>
+                    <p class="about-story">
+                        Founded in 2015, we've been serving authentic Malaysian cuisine 
+                        with a modern twist. Our chefs use only the freshest ingredients 
+                        to create memorable dining experiences.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fresh Ingredients Daily</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Halal Certified</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Air-Conditioned Dining</span>
+                        </div>
+                    </div>
+                    
+                    <div class="opening-hours">
+                        <h3><i class="far fa-clock"></i> Opening Hours</h3>
+                        <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
+                        <p class="closed">Closed on Public Holidays</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IMAGE SLIDER SECTION ========== -->
+    <section class="section image-slider-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Gallery</h2>
+                <p>Experience the ambiance of Restoran SUP TULANG ZZ</p>
+            </div>
+            
+            <div class="slider-container">
+                <!-- Slider Wrapper -->
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide1.jpeg" alt="Gallery Image 1">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide2.jpeg" alt="Gallery Image 2">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide3.jpeg" alt="Gallery Image 3">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide4.jpeg" alt="Gallery Image 4">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide5.jpeg" alt="Gallery Image 5">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide6.jpeg" alt="Gallery Image 6">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide7.jpeg" alt="Gallery Image 7">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide8.jpeg" alt="Gallery Image 8">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide9.jpeg" alt="Gallery Image 9">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide10.jpeg" alt="Gallery Image 10">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide11.jpeg" alt="Gallery Image 11">
+                    </div>
+                    <div class="slider-slide">
+                        <img src="assets/images/Slider/Slide12.jpeg" alt="Gallery Image 12">
+                    </div>
+                </div>
+                
+                <!-- Hidden Navigation Arrows (appear on hover) -->
+                <button class="slider-arrow slider-arrow-left" id="sliderArrowLeft">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow slider-arrow-right" id="sliderArrowRight">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Dots -->
+                <div class="slider-dots" id="sliderDots">
+                    <span class="slider-dot active" data-index="0"></span>
+                    <span class="slider-dot" data-index="1"></span>
+                    <span class="slider-dot" data-index="2"></span>
+                    <span class="slider-dot" data-index="3"></span>
+                    <span class="slider-dot" data-index="4"></span>
+                    <span class="slider-dot" data-index="5"></span>
+                    <span class="slider-dot" data-index="6"></span>
+                    <span class="slider-dot" data-index="7"></span>
+                    <span class="slider-dot" data-index="8"></span>
+                    <span class="slider-dot" data-index="9"></span>
+                    <span class="slider-dot" data-index="10"></span>
+                    <span class="slider-dot" data-index="11"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3><img src="assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ" style="height: 150px; width: auto;"> Restoran SUP TULANG ZZ</h3>
+                    <p>Delicious food, excellent service, memorable experience.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="pages/menu.php"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="pages/news-events.php"><i class="fas fa-chevron-right"></i> News & Events</a></li>
+                        <li><a href="pages/about.php"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="pages/contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jalan Example, Melaka</p>
+                    <p><i class="fas fa-phone"></i> 012-3456789</p>
+                    <p><i class="fas fa-envelope"></i> info@restaurant.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Restaurant SUP TULANG ZZ Order Management System for Walk-In and Online Customers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== BOTTOM MOBILE NAVIGATION ========== -->
+    <nav class="mobile-nav">
+        <a href="index.php" class="active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="pages/menu.php">
+            <i class="fas fa-utensils"></i>
+            <span>Menu</span>
+        </a>
+        <a href="pages/customer/cart.php">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Cart</span>
+        </a>
+        <a href="pages/customer/order-status.php">
+            <i class="fas fa-receipt"></i>
+            <span>Orders</span>
+        </a>
+        <a href="profile.php">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
