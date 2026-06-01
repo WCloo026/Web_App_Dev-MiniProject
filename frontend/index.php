@@ -17,14 +17,14 @@
     <header class="header">
         <div class="header-container">
             <!-- Logo + Restaurant Name (Click to Home) -->
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <img src="assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
                 <h1>Restoran SUP TULANG ZZ</h1>
             </a>
             
             <!-- Cart Icon Only -->
             <div class="header-icons">
-                <a href="pages/customer/cart.html" class="icon-link">
+                <a href="pages/customer/cart.php" class="icon-link">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge">0</span>
                 </a>
@@ -37,13 +37,13 @@
         <!-- Desktop Navigation -->
         <nav class="desktop-nav" id="desktopNav">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/menu.html">Menu</a></li>
-                <li><a href="pages/news-events.html">News & Events</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="register.html" class="btn-register">Register</a></li>
+                <li><a href="index.php" class="active">Home</a></li>
+                <li><a href="pages/menu.php">Menu</a></li>
+                <li><a href="pages/news-events.php">News & Events</a></li>
+                <li><a href="pages/about.php">About</a></li>
+                <li><a href="pages/contact.php">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="register.php" class="btn-register">Register</a></li>
             </ul>
         </nav>
     </header>
@@ -60,10 +60,10 @@
                 <p class="hero-subtitle">Delicious food delivered fresh to your table</p>
                 
                 <div class="hero-buttons">
-                    <a href="pages/menu.html" class="btn-primary">
+                    <a href="pages/menu.php" class="btn-primary">
                         <i class="fas fa-utensils"></i> View Our Menu
                     </a>
-                    <a href="pages/contact.html" class="btn-secondary">
+                    <a href="pages/contact.php" class="btn-secondary">
                         <i class="fas fa-phone"></i> Contact
                     </a>
                 </div>
@@ -188,31 +188,31 @@
             </div>
             
             <div class="category-grid">
-                <a href="pages/menu.html?category=main" class="category-card">
+                <a href="pages/menu.php?category=main" class="category-card">
                     <i class="fas fa-drumstick-bite"></i>
                     <h3>Main Course</h3>
                     <p>12 items</p>
                 </a>
                 
-                <a href="pages/menu.html?category=drinks" class="category-card">
+                <a href="pages/menu.php?category=drinks" class="category-card">
                     <i class="fas fa-coffee"></i>
                     <h3>Drinks</h3>
                     <p>8 items</p>
                 </a>
                 
-                <a href="pages/menu.html?category=dessert" class="category-card">
+                <a href="pages/menu.php?category=dessert" class="category-card">
                     <i class="fas fa-ice-cream"></i>
                     <h3>Desserts</h3>
                     <p>6 items</p>
                 </a>
                 
-                <a href="pages/menu.html?category=snacks" class="category-card">
+                <a href="pages/menu.php?category=snacks" class="category-card">
                     <i class="fas fa-cookie"></i>
                     <h3>Snacks</h3>
                     <p>10 items</p>
                 </a>
                 
-                <a href="pages/menu.html?category=soup" class="category-card">
+                <a href="pages/menu.php?category=soup" class="category-card">
                     <i class="fas fa-mug-hot"></i>
                     <h3>Soup</h3>
                     <p>5 items</p>
@@ -353,11 +353,11 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="pages/menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
-                        <li><a href="pages/news-events.html"><i class="fas fa-chevron-right"></i> News & Events</a></li>
-                        <li><a href="pages/about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="pages/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="pages/menu.php"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="pages/news-events.php"><i class="fas fa-chevron-right"></i> News & Events</a></li>
+                        <li><a href="pages/about.php"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="pages/contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
@@ -386,23 +386,23 @@
 
     <!-- ========== BOTTOM MOBILE NAVIGATION ========== -->
     <nav class="mobile-nav">
-        <a href="index.html" class="active">
+        <a href="index.php" class="active">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="pages/menu.html">
+        <a href="pages/menu.php">
             <i class="fas fa-utensils"></i>
             <span>Menu</span>
         </a>
-        <a href="pages/customer/cart.html">
+        <a href="pages/customer/cart.php">
             <i class="fas fa-shopping-cart"></i>
             <span>Cart</span>
         </a>
-        <a href="pages/customer/order-status.html">
+        <a href="pages/customer/order-status.php">
             <i class="fas fa-receipt"></i>
             <span>Orders</span>
         </a>
-        <a href="profile.html">
+        <a href="profile.php">
             <i class="fas fa-user"></i>
             <span>Profile</span>
         </a>

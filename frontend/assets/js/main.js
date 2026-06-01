@@ -400,7 +400,7 @@ function initSearch() {
             if (e.key === 'Enter') {
                 const query = this.value.trim();
                 if (query) {
-                    window.location.href = `pages/menu.html?search=${encodeURIComponent(query)}`;
+                    window.location.href = `pages/menu.php?search=${encodeURIComponent(query)}`;
                 }
             }
         });
