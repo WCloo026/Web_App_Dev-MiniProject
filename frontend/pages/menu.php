@@ -72,20 +72,41 @@
                 <button class="filter-btn active" data-category="all">
                     <i class="fas fa-th-large"></i> All
                 </button>
-                <button class="filter-btn" data-category="main">
-                    <i class="fas fa-drumstick-bite"></i> Main Course
+    
+                <button class="filter-btn" data-category="Signature">
+                    <i class="fas fa-crown"></i> Signature
                 </button>
-                <button class="filter-btn" data-category="drinks">
-                    <i class="fas fa-coffee"></i> Drinks
+    
+                <button class="filter-btn" data-category="Sarapan">
+                    <i class="fas fa-coffee"></i> Sarapan
                 </button>
-                <button class="filter-btn" data-category="dessert">
-                    <i class="fas fa-ice-cream"></i> Desserts
+    
+                <button class="filter-btn" data-category="Roti Canai">
+                    <i class="fas fa-bread-slice"></i> Roti Canai
                 </button>
-                <button class="filter-btn" data-category="snacks">
-                    <i class="fas fa-cookie"></i> Snacks
+    
+                <button class="filter-btn" data-category="Set Tengah Hari">
+                    <i class="fas fa-utensils"></i> Set Tengah Hari
                 </button>
-                <button class="filter-btn" data-category="soup">
-                    <i class="fas fa-mug-hot"></i> Soup
+    
+                <button class="filter-btn" data-category="Menu Ikan">
+                    <i class="fas fa-fish"></i> Menu Ikan
+                </button>
+    
+                <button class="filter-btn" data-category="Ala-carte Menu">
+                    <i class="fas fa-book-open"></i> Ala-carte Menu
+                </button>
+    
+                <button class="filter-btn" data-category="Western Food">
+                    <i class="fas fa-hamburger"></i> Western Food
+                </button>
+    
+                <button class="filter-btn" data-category="Goreng-Goreng">
+                    <i class="fas fa-hotdog"></i> Goreng-Goreng
+                </button>
+    
+                <button class="filter-btn" data-category="Drinks">
+                    <i class="fas fa-mug-hot"></i> Drinks
                 </button>
             </div>
             
