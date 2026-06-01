@@ -65,7 +65,7 @@ function initQrNav() {
 
     navOrders.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'order-status.html';
+        window.location.href = 'order-status.php';
     });
 
     function setActiveNav(active) {

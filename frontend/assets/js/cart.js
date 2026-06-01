@@ -205,11 +205,11 @@ function initCheckout() {
         const orderType = document.querySelector('input[name="orderType"]:checked');
         
         if (orderType && orderType.value === 'online') {
-            window.location.href = '../checkout.html';
+            window.location.href = '../checkout.php';
         } else {
             // Dine-in: go to table number page or directly place order
             alert('Please scan the QR code at your table to place a dine-in order.\n\nRedirecting to QR order page...');
-            window.location.href = 'scan-order.html';
+            window.location.href = 'scan-order.php';
         }
     });
 }

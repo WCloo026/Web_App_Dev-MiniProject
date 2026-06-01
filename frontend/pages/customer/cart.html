@@ -17,13 +17,13 @@
     <!-- ========== TOP HEADER ========== -->
     <header class="header">
         <div class="header-container">
-            <a href="../../index.html" class="logo">
+            <a href="../../index.php" class="logo">
                 <img src="../../assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
                 <h1>Restoran SUP TULANG ZZ</h1>
             </a>
             
             <div class="header-icons">
-                <a href="cart.html" class="icon-link">
+                <a href="cart.php" class="icon-link">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cartBadge">0</span>
                 </a>
@@ -35,13 +35,13 @@
         
         <nav class="desktop-nav" id="desktopNav">
             <ul>
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../menu.html">Menu</a></li>
-                <li><a href="../news-events.html">News & Events</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../login.html" class="btn-login">Login</a></li>
-                <li><a href="../register.html" class="btn-register">Register</a></li>
+                <li><a href="../../index.php">Home</a></li>
+                <li><a href="../menu.php">Menu</a></li>
+                <li><a href="../news-events.php">News & Events</a></li>
+                <li><a href="../about.php">About</a></li>
+                <li><a href="../contact.php">Contact</a></li>
+                <li><a href="../login.php" class="btn-login">Login</a></li>
+                <li><a href="../register.php" class="btn-register">Register</a></li>
             </ul>
         </nav>
     </header>
@@ -52,7 +52,7 @@
             <!-- Page Title -->
             <div class="cart-page-header">
                 <h1><i class="fas fa-shopping-cart"></i> Your Cart</h1>
-                <a href="../menu.html" class="back-to-menu">
+                <a href="../menu.php" class="back-to-menu">
                     <i class="fas fa-arrow-left"></i> Continue Shopping
                 </a>
             </div>
@@ -62,7 +62,7 @@
                 <i class="fas fa-shopping-basket"></i>
                 <h2>Your cart is empty</h2>
                 <p>Looks like you haven't added anything yet. Let's find something delicious!</p>
-                <a href="../menu.html" class="btn-primary">
+                <a href="../menu.php" class="btn-primary">
                     <i class="fas fa-utensils"></i> Browse Menu
                 </a>
             </div>
@@ -108,7 +108,7 @@
                                 <i class="fas fa-lock"></i> Proceed to Checkout
                             </button>
                             
-                            <a href="../menu.html" class="continue-shopping-link">
+                            <a href="../menu.php" class="continue-shopping-link">
                                 <i class="fas fa-plus-circle"></i> Add More Items
                             </a>
                         </div>
@@ -165,11 +165,11 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="../menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
-                        <li><a href="../news-events.html"><i class="fas fa-chevron-right"></i> News & Events</a></li>
-                        <li><a href="../about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="../../index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="../menu.php"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="../news-events.php"><i class="fas fa-chevron-right"></i> News & Events</a></li>
+                        <li><a href="../about.php"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="../contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -195,11 +195,11 @@
 
     <!-- ========== BOTTOM MOBILE NAVIGATION ========== -->
     <nav class="mobile-nav">
-        <a href="../../index.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="../menu.html"><i class="fas fa-utensils"></i><span>Menu</span></a>
-        <a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
-        <a href="order-status.html"><i class="fas fa-receipt"></i><span>Orders</span></a>
-        <a href="../../profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
+        <a href="../../index.php"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="../menu.php"><i class="fas fa-utensils"></i><span>Menu</span></a>
+        <a href="cart.php" class="active"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
+        <a href="order-status.php"><i class="fas fa-receipt"></i><span>Orders</span></a>
+        <a href="../../profile.php"><i class="fas fa-user"></i><span>Profile</span></a>
     </nav>
 
     <!-- JavaScript -->
