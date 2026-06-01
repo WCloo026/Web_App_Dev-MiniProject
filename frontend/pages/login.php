@@ -1,3 +1,24 @@
+<?php
+session_start();
+// Redirect if already logged in
+if (isset($_SESSION['user_id'])) {
+    $role = $_SESSION['user_role'] ?? 'customer';
+    $dest = ($role === 'admin' || $role === 'staff') ? 'staff/dashboard.php' : 'customer/dashboard.php';
+    header('Location: ' . $dest);
+    exit;
+}
+$errorMsg = '';
+$errors = [
+    'invalid'  => 'Incorrect email or password. Please try again.',
+    'inactive' => 'Your account has been deactivated. Contact us.',
+    'db'       => 'Server error. Please try again later.',
+    'required' => 'Email and password are required.',
+    'empty'    => 'Please fill in all fields.',
+];
+if (isset($_GET['error']) && array_key_exists($_GET['error'], $errors)) {
+    $errorMsg = $errors[$_GET['error']];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +82,15 @@
             transition: background 0.25s, transform 0.2s; font-family: inherit; margin-top: 4px;
         }
         .btn-auth:hover { background: #96281b; transform: translateY(-2px); }
+
+        .auth-error-banner {
+            display: flex; align-items: center; gap: 10px;
+            background: #fde8e8; border: 1px solid #f5c6c6;
+            border-radius: 8px; padding: 12px 14px;
+            font-size: 0.875rem; color: #c0392b;
+            margin-bottom: 16px;
+        }
+        .auth-error-banner i { font-size: 1rem; flex-shrink: 0; }
         .auth-footer { text-align: center; margin-top: 20px; font-size: 0.875rem; color: #777; }
         .auth-footer a { color: #c0392b; font-weight: 600; text-decoration: none; }
     </style>
@@ -70,7 +100,7 @@
     <!-- ========== HEADER ========== -->
     <header class="header">
         <div class="header-container">
-            <a href="../index.php" class="logo">
+            <a href="../../index.php" class="logo">
                 <img src="../assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
                 <h1>Restoran SUP TULANG ZZ</h1>
             </a>
@@ -84,7 +114,7 @@
         </div>
         <nav class="desktop-nav" id="desktopNav">
             <ul>
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="../../index.php">Home</a></li>
                 <li><a href="menu.php">Menu</a></li>
                 <li><a href="news-events.php">News &amp; Events</a></li>
                 <li><a href="about.php">About</a></li>
@@ -111,7 +141,14 @@
                     <span>Staff members: use your assigned staff credentials</span>
                 </div>
 
-                <form class="auth-form" id="loginForm" method="POST" action="../backend/api/auth.php">
+                
+                <?php if ($errorMsg): ?>
+                <div class="auth-error-banner">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span><?php echo htmlspecialchars($errorMsg); ?></span>
+                </div>
+                <?php endif; ?>
+<form class="auth-form" id="loginForm" method="POST" action="../../backend/api/auth.php">
                     <input type="hidden" name="action" value="login">
 
                     <div class="form-group">
@@ -167,7 +204,7 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="../../index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="menu.php"><i class="fas fa-chevron-right"></i> Menu</a></li>
                         <li><a href="news-events.php"><i class="fas fa-chevron-right"></i> News &amp; Events</a></li>
                         <li><a href="about.php"><i class="fas fa-chevron-right"></i> About</a></li>
@@ -196,7 +233,7 @@
     </footer>
 
     <nav class="mobile-nav">
-        <a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="../../index.php"><i class="fas fa-home"></i><span>Home</span></a>
         <a href="menu.php"><i class="fas fa-utensils"></i><span>Menu</span></a>
         <a href="customer/cart.php"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
         <a href="customer/order-status.php"><i class="fas fa-receipt"></i><span>Orders</span></a>
