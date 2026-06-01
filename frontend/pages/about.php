@@ -16,13 +16,13 @@
     <!-- ========== TOP HEADER with Glass Effect ========== -->
     <header class="header">
         <div class="header-container">
-            <a href="../index.html" class="logo">
+            <a href="../index.php" class="logo">
                 <img src="../assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
                 <h1>Restoran SUP TULANG ZZ</h1>
             </a>
             
             <div class="header-icons">
-                <a href="customer/cart.html" class="icon-link">
+                <a href="customer/cart.php" class="icon-link">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cartBadge">0</span>
                 </a>
@@ -34,13 +34,13 @@
         
         <nav class="desktop-nav" id="desktopNav">
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="news-events.html">News & Events</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="register.html" class="btn-register">Register</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="menu.php">Menu</a></li>
+                <li><a href="news-events.php">News & Events</a></li>
+                <li><a href="about.php" class="active">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="login.php" class="btn-login">Login</a></li>
+                <li><a href="register.php" class="btn-register">Register</a></li>
             </ul>
         </nav>
     </header>
@@ -235,11 +235,11 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
-                        <li><a href="news-events.html"><i class="fas fa-chevron-right"></i> News & Events</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="../index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.php"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="news-events.php"><i class="fas fa-chevron-right"></i> News & Events</a></li>
+                        <li><a href="about.php"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -265,11 +265,11 @@
 
     <!-- ========== BOTTOM MOBILE NAVIGATION ========== -->
     <nav class="mobile-nav">
-        <a href="../index.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="menu.html"><i class="fas fa-utensils"></i><span>Menu</span></a>
-        <a href="customer/cart.html"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
-        <a href="customer/order-status.html"><i class="fas fa-receipt"></i><span>Orders</span></a>
-        <a href="../profile.html"><i class="fas fa-user"></i><span>Profile</span></a>
+        <a href="../index.php"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="menu.php"><i class="fas fa-utensils"></i><span>Menu</span></a>
+        <a href="customer/cart.php"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
+        <a href="customer/order-status.php"><i class="fas fa-receipt"></i><span>Orders</span></a>
+        <a href="../profile.php"><i class="fas fa-user"></i><span>Profile</span></a>
     </nav>
 
     <!-- JavaScript -->
