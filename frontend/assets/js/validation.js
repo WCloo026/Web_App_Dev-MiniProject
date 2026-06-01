@@ -1,190 +1,14 @@
-// ========================================
-// VALIDATION.JS — Form Validation
-// Member 1: Login, Register, QR Order
-// ========================================
+/**
+ * validation.js
+ * Restoran SUP TULANG ZZ
+ * Covers: Login | Register | QR Order | Checkout
+ * Members 1 & 2
+ */
 
-document.addEventListener('DOMContentLoaded', function () {
+// ══════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════
 
-    // ========================================
-    // 1. LOGIN FORM VALIDATION
-    // ========================================
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            let valid = true;
-
-            // Email
-            const email = document.getElementById('email');
-            const emailError = document.getElementById('emailError');
-            if (!email.value.trim()) {
-                showError(email, emailError, 'Email is required');
-                valid = false;
-            } else if (!isValidEmail(email.value.trim())) {
-                showError(email, emailError, 'Please enter a valid email address');
-                valid = false;
-            } else {
-                clearError(email, emailError);
-            }
-
-            // Password
-            const password = document.getElementById('password');
-            const passwordError = document.getElementById('passwordError');
-            if (!password.value) {
-                showError(password, passwordError, 'Password is required');
-                valid = false;
-            } else if (password.value.length < 6) {
-                showError(password, passwordError, 'Password must be at least 6 characters');
-                valid = false;
-            } else {
-                clearError(password, passwordError);
-            }
-
-            if (valid) {
-                alert('✅ Login successful! (Demo)');
-                // loginForm.submit();
-            }
-        });
-    }
-
-    // ========================================
-    // 2. REGISTRATION FORM VALIDATION
-    // ========================================
-    const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
-        registerForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            let valid = true;
-
-            // Full Name
-            const fullName = document.getElementById('fullName');
-            const nameError = document.getElementById('nameError');
-            if (!fullName.value.trim()) {
-                showError(fullName, nameError, 'Full name is required');
-                valid = false;
-            } else if (fullName.value.trim().length < 3) {
-                showError(fullName, nameError, 'Name must be at least 3 characters');
-                valid = false;
-            } else {
-                clearError(fullName, nameError);
-            }
-
-            // Email
-            const email = document.getElementById('email');
-            const emailError = document.getElementById('emailError');
-            if (!email.value.trim()) {
-                showError(email, emailError, 'Email is required');
-                valid = false;
-            } else if (!isValidEmail(email.value.trim())) {
-                showError(email, emailError, 'Please enter a valid email address');
-                valid = false;
-            } else {
-                clearError(email, emailError);
-            }
-
-            // Phone
-            const phone = document.getElementById('phone');
-            const phoneError = document.getElementById('phoneError');
-            if (!phone.value.trim()) {
-                showError(phone, phoneError, 'Phone number is required');
-                valid = false;
-            } else if (!/^01\d{8,9}$/.test(phone.value.replace(/[- ]/g, ''))) {
-                showError(phone, phoneError, 'Enter a valid phone (e.g. 0123456789)');
-                valid = false;
-            } else {
-                clearError(phone, phoneError);
-            }
-
-            // Password
-            const password = document.getElementById('password');
-            const passwordError = document.getElementById('passwordError');
-            if (!password.value) {
-                showError(password, passwordError, 'Password is required');
-                valid = false;
-            } else if (password.value.length < 8) {
-                showError(password, passwordError, 'Password must be at least 8 characters');
-                valid = false;
-            } else {
-                clearError(password, passwordError);
-            }
-
-            // Confirm Password
-            const confirmPassword = document.getElementById('confirmPassword');
-            const confirmPasswordError = document.getElementById('confirmPasswordError');
-            if (!confirmPassword.value) {
-                showError(confirmPassword, confirmPasswordError, 'Please confirm your password');
-                valid = false;
-            } else if (confirmPassword.value !== password.value) {
-                showError(confirmPassword, confirmPasswordError, 'Passwords do not match');
-                valid = false;
-            } else {
-                clearError(confirmPassword, confirmPasswordError);
-            }
-
-            // Terms Checkbox
-            const agreeTerms = document.getElementById('agreeTerms');
-            const termsError = document.getElementById('termsError');
-            if (!agreeTerms.checked) {
-                showError(null, termsError, 'You must agree to the Terms & Conditions');
-                valid = false;
-            } else {
-                clearError(null, termsError);
-            }
-
-            if (valid) {
-                alert('✅ Registration successful! (Demo)');
-                // registerForm.submit();
-            }
-        });
-    }
-
-    // ========================================
-    // 3. QR ORDER VALIDATION
-    // ========================================
-    // Table number & Pax handled by scrollers (always have a value)
-    // Ensure Place Order has at least 1 item
-    const btnPlaceOrder = document.getElementById('btnPlaceOrder');
-    if (btnPlaceOrder) {
-        btnPlaceOrder.addEventListener('click', function (e) {
-            const countBadge = document.getElementById('orderCountBadge');
-            const count = countBadge ? parseInt(countBadge.textContent) : 0;
-            if (count === 0) {
-                e.preventDefault();
-                e.stopPropagation();
-                alert('⚠️ Please add at least 1 item to your order.');
-                return false;
-            }
-        }, true); // Capture phase to run before other handlers
-    }
-
-    // ========================================
-    // CLEAR ERRORS ON INPUT
-    // ========================================
-    document.querySelectorAll('input').forEach(input => {
-        input.addEventListener('input', function () {
-            const errorEl = this.closest('.form-group')?.querySelector('.error-message');
-            if (errorEl) {
-                clearError(this, errorEl);
-            }
-        });
-    });
-
-    // Checkbox clear error
-    const agreeTerms = document.getElementById('agreeTerms');
-    if (agreeTerms) {
-        agreeTerms.addEventListener('change', function () {
-            const termsError = document.getElementById('termsError');
-            if (this.checked && termsError) {
-                clearError(null, termsError);
-            }
-        });
-    }
-
-});
-
-// ========================================
-// HELPER FUNCTIONS
-// ========================================
 function showError(input, errorEl, message) {
     if (input) input.style.borderColor = '#e74c3c';
     if (errorEl) {
@@ -201,6 +25,262 @@ function clearError(input, errorEl) {
     }
 }
 
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+function clearAllErrors() {
+    document.querySelectorAll('.error-message').forEach(el => {
+        el.textContent = '';
+        el.style.display = 'none';
+    });
+    document.querySelectorAll('input').forEach(el => {
+        el.style.borderColor = '#e8e0d8';
+    });
 }
+
+function isValidEmail(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+}
+
+function isValidPhone(val) {
+    return /^(01[0-9])\d{7,8}$/.test(val.replace(/[\s\-]/g, ''));
+}
+
+// ══════════════════════════════════════════
+// 1. LOGIN VALIDATION (Member 1)
+// ══════════════════════════════════════════
+
+function validateLogin() {
+    clearAllErrors();
+    let ok = true;
+
+    const email = document.getElementById('email')?.value.trim() || '';
+    const pass = document.getElementById('password')?.value || '';
+
+    if (!email) {
+        showError(document.getElementById('email'), document.getElementById('emailError'), 'Email is required');
+        ok = false;
+    } else if (!isValidEmail(email)) {
+        showError(document.getElementById('email'), document.getElementById('emailError'), 'Please enter a valid email address');
+        ok = false;
+    }
+
+    if (!pass) {
+        showError(document.getElementById('password'), document.getElementById('passwordError'), 'Password is required');
+        ok = false;
+    } else if (pass.length < 6) {
+        showError(document.getElementById('password'), document.getElementById('passwordError'), 'Password must be at least 6 characters');
+        ok = false;
+    }
+
+    return ok;
+}
+
+// ══════════════════════════════════════════
+// 2. REGISTER VALIDATION (Member 1)
+// ══════════════════════════════════════════
+
+function validateRegister() {
+    clearAllErrors();
+    let ok = true;
+
+    const name = document.getElementById('fullName')?.value.trim() || '';
+    const email = document.getElementById('email')?.value.trim() || '';
+    const phone = document.getElementById('phone')?.value.trim() || '';
+    const pass = document.getElementById('password')?.value || '';
+    const confirm = document.getElementById('confirmPassword')?.value || '';
+    const terms = document.getElementById('agreeTerms')?.checked;
+
+    if (!name || name.length < 3) {
+        showError(document.getElementById('fullName'), document.getElementById('nameError'), 'Name must be at least 3 characters');
+        ok = false;
+    }
+
+    if (!email) {
+        showError(document.getElementById('email'), document.getElementById('emailError'), 'Email is required');
+        ok = false;
+    } else if (!isValidEmail(email)) {
+        showError(document.getElementById('email'), document.getElementById('emailError'), 'Please enter a valid email address');
+        ok = false;
+    }
+
+    if (!phone) {
+        showError(document.getElementById('phone'), document.getElementById('phoneError'), 'Phone number is required');
+        ok = false;
+    } else if (!isValidPhone(phone)) {
+        showError(document.getElementById('phone'), document.getElementById('phoneError'), 'Enter a valid phone (e.g. 0123456789)');
+        ok = false;
+    }
+
+    if (!pass) {
+        showError(document.getElementById('password'), document.getElementById('passwordError'), 'Password is required');
+        ok = false;
+    } else if (pass.length < 8) {
+        showError(document.getElementById('password'), document.getElementById('passwordError'), 'Password must be at least 8 characters');
+        ok = false;
+    }
+
+    if (!confirm) {
+        showError(document.getElementById('confirmPassword'), document.getElementById('confirmPasswordError'), 'Please confirm your password');
+        ok = false;
+    } else if (confirm !== pass) {
+        showError(document.getElementById('confirmPassword'), document.getElementById('confirmPasswordError'), 'Passwords do not match');
+        ok = false;
+    }
+
+    if (!terms) {
+        const termsErr = document.getElementById('termsError');
+        if (termsErr) {
+            termsErr.textContent = 'You must agree to the Terms & Conditions';
+            termsErr.style.display = 'block';
+        }
+        ok = false;
+    }
+
+    return ok;
+}
+
+// ══════════════════════════════════════════
+// 3. QR ORDER VALIDATION (Member 1)
+// ══════════════════════════════════════════
+
+function validateQrOrder() {
+    const countBadge = document.getElementById('orderCountBadge');
+    const count = countBadge ? parseInt(countBadge.textContent) : 0;
+    if (count === 0) {
+        alert('⚠️ Please add at least 1 item to your order.');
+        return false;
+    }
+    return true;
+}
+
+// ══════════════════════════════════════════
+// 4. CHECKOUT VALIDATION (Member 2)
+// ══════════════════════════════════════════
+
+function validateCheckout() {
+    clearAllErrors();
+    let ok = true;
+
+    const cart = JSON.parse(localStorage.getItem('restaurantCart') || '[]');
+    if (cart.length === 0) {
+        alert('Your cart is empty! Please add items before checking out.');
+        return false;
+    }
+
+    const name = document.getElementById('custName')?.value.trim() || '';
+    const phone = document.getElementById('custPhone')?.value.trim() || '';
+    const orderType = document.querySelector('input[name="orderType"]:checked')?.value || '';
+    const payment = document.querySelector('input[name="paymentMethod"]:checked')?.value || '';
+
+    if (!name || name.length < 2) {
+        showError(document.getElementById('custName'), document.getElementById('custNameError'), 'Please enter your full name');
+        ok = false;
+    }
+
+    if (!phone) {
+        showError(document.getElementById('custPhone'), document.getElementById('custPhoneError'), 'Phone number is required');
+        ok = false;
+    } else if (!isValidPhone(phone)) {
+        showError(document.getElementById('custPhone'), document.getElementById('custPhoneError'), 'Enter a valid phone number');
+        ok = false;
+    }
+
+    if (orderType === 'delivery') {
+        const address = document.getElementById('address')?.value.trim() || '';
+        if (!address) {
+            showError(document.getElementById('address'), document.getElementById('addressError'), 'Delivery address is required');
+            ok = false;
+        }
+    }
+
+    if (orderType === 'dine-in') {
+        const table = document.getElementById('tableNumber')?.value.trim() || '';
+        if (!table || parseInt(table) < 1) {
+            showError(document.getElementById('tableNumber'), document.getElementById('tableError'), 'Please enter a valid table number');
+            ok = false;
+        }
+    }
+
+    if (payment === 'online_transfer') {
+        const receipt = document.getElementById('receipt')?.files[0];
+        if (!receipt) {
+            showError(document.getElementById('receipt'), document.getElementById('receiptError'), 'Please upload your payment receipt');
+            ok = false;
+        } else {
+            const allowed = ['image/jpeg', 'image/png', 'application/pdf'];
+            if (!allowed.includes(receipt.type)) {
+                showError(document.getElementById('receipt'), document.getElementById('receiptError'), 'Invalid file type. Accepted: JPG, PNG, PDF');
+                ok = false;
+            } else if (receipt.size > 5 * 1024 * 1024) {
+                showError(document.getElementById('receipt'), document.getElementById('receiptError'), 'File size must not exceed 5MB');
+                ok = false;
+            }
+        }
+    }
+
+    return ok;
+}
+
+// ══════════════════════════════════════════
+// ATTACH TO FORMS ON DOM READY
+// ══════════════════════════════════════════
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Login ──
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+            if (!validateLogin()) e.preventDefault();
+        });
+        ['email', 'password'].forEach(id => {
+            document.getElementById(id)?.addEventListener('input', function () {
+                clearError(this, document.getElementById(id + 'Error'));
+            });
+        });
+    }
+
+    // ── Register ──
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function (e) {
+            if (!validateRegister()) e.preventDefault();
+        });
+        ['fullName', 'email', 'phone', 'password', 'confirmPassword'].forEach(id => {
+            const errId = id === 'fullName' ? 'nameError' : id + 'Error';
+            document.getElementById(id)?.addEventListener('input', function () {
+                clearError(this, document.getElementById(errId));
+            });
+        });
+        // Terms checkbox
+        document.getElementById('agreeTerms')?.addEventListener('change', function () {
+            if (this.checked) {
+                const termsErr = document.getElementById('termsError');
+                if (termsErr) { termsErr.textContent = ''; termsErr.style.display = 'none'; }
+            }
+        });
+    }
+
+    // ── QR Order ──
+    const btnPlaceOrder = document.getElementById('btnPlaceOrder');
+    if (btnPlaceOrder) {
+        btnPlaceOrder.addEventListener('click', function (e) {
+            if (!validateQrOrder()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
+
+    // ── Checkout ──
+    const checkoutForm = document.getElementById('checkoutForm');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function (e) {
+            if (!validateCheckout()) e.preventDefault();
+        });
+        ['custName', 'custPhone', 'address', 'tableNumber'].forEach(id => {
+            document.getElementById(id)?.addEventListener('input', function () {
+                clearError(this, document.getElementById(id + 'Error'));
+            });
+        });
+    }
+
+});
