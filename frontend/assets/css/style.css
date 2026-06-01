@@ -3,12 +3,12 @@
    ======================================== */
 :root {
     /* 主色调 */
-    --primary: #FF8C00;           /* Orange - 按钮 */
+    --primary: #FF8C00;           /* Orange - Button */
     --primary-dark: #E67A00;      /* Dark Orange - Hover */
     --primary-light: #FFB84D;     /* Light Orange */
     
     /* 背景色 */
-    --bg-primary: #FDF5EE;        /* 主背景 - Warm White */
+    --bg-primary: #FDF5EE;        /* Main Background - Warm White */
     --bg-white: #FFFFFF;          /* White - Cards */
     --bg-navbar: #FFFFFF;         /* Navbar - White */
     --bg-footer: #2C2C2C;         /* Footer - Dark */

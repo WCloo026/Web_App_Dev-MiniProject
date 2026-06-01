@@ -44,6 +44,7 @@
                 <li><a href="pages/contact.php">Contact</a></li>
                 <li><a href="login.php" class="btn-login">Login</a></li>
                 <li><a href="register.php" class="btn-register">Register</a></li>
+                <li><a href="pages/staff/dashboard.php">Admin</a></li> <!-- For development purposes.-->
             </ul>
         </nav>
     </header>
