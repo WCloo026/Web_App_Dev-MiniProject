@@ -88,15 +88,15 @@
             <div class="specials-grid">
                 <div class="special-card">
                     <div class="card-image">
-                        <img src="assets/images/food1.jpg" alt="Nasi Lemak">
-                        <span class="discount-badge">-15%</span>
+                        <img src="assets/images/Today special/Sup Gearbox Kambing.jpeg" alt="Nasi Lemak">
+                        <span class="discount-badge">-21%</span>
                     </div>
                     <div class="card-content">
-                        <h3>Nasi Lemak</h3>
-                        <p class="description">Fragrant coconut rice with sambal, egg, and anchovies</p>
+                        <h3>Sup Gearbox Kambing</h3>
+                        <p class="description">Signature lamb gearbox soup served with rich traditional broth.</p>
                         <div class="price-row">
-                            <span class="price">RM 8.00</span>
-                            <span class="old-price">RM 9.50</span>
+                            <span class="price">RM 15.0</span>
+                            <span class="old-price">RM 19.0</span>
                         </div>
                         <button class="btn-add-cart" onclick="addToCart(1, 'Nasi Lemak', 8.00)">
                             <i class="fas fa-plus"></i> Add to Cart
@@ -106,15 +106,15 @@
                 
                 <div class="special-card">
                     <div class="card-image">
-                        <img src="assets/images/food2.jpg" alt="Chicken Chop">
+                        <img src="assets/images/Today special/Nasi Siakap Goreng Berlado.jpg" alt="Chicken Chop">
                         <span class="discount-badge">-10%</span>
                     </div>
                     <div class="card-content">
-                        <h3>Chicken Chop</h3>
-                        <p class="description">Grilled chicken with mushroom sauce and vegetables</p>
+                        <h3>Nasi Siakap Goreng Berlado</h3>
+                        <p class="description">Fried siakap fish served with spicy berlado sauce and rice.</p>
                         <div class="price-row">
-                            <span class="price">RM 15.00</span>
-                            <span class="old-price">RM 16.50</span>
+                            <span class="price">RM 13.99</span>
+                            <span class="old-price">RM 15.0</span>
                         </div>
                         <button class="btn-add-cart" onclick="addToCart(2, 'Chicken Chop', 15.00)">
                             <i class="fas fa-plus"></i> Add to Cart
@@ -124,15 +124,15 @@
                 
                 <div class="special-card">
                     <div class="card-image">
-                        <img src="assets/images/food3.jpg" alt="Special Drink">
-                        <span class="discount-badge">-20%</span>
+                        <img src="assets/images/Today special/Chicken Chop.jpeg" alt="Special Drink">
+                        <span class="discount-badge">-10%</span>
                     </div>
                     <div class="card-content">
-                        <h3>Mango Smoothie</h3>
-                        <p class="description">Fresh mango blended with yogurt and honey</p>
+                        <h3>Chicken Chop</h3>
+                        <p class="description">Western style chicken chop available fried or grilled.</p>
                         <div class="price-row">
-                            <span class="price">RM 6.50</span>
-                            <span class="old-price">RM 8.00</span>
+                            <span class="price">RM 16.99</span>
+                            <span class="old-price">RM18.5</span>
                         </div>
                         <button class="btn-add-cart" onclick="addToCart(3, 'Mango Smoothie', 6.50)">
                             <i class="fas fa-plus"></i> Add to Cart
@@ -153,26 +153,26 @@
             
             <div class="popular-grid">
                 <div class="popular-item">
-                    <img src="assets/images/menu1.jpg" alt="Tom Yum Soup">
-                    <h3>Tom Yum Soup</h3>
+                    <img src="assets/images/Popular menu/Mee Rebus Gearbox Kambing.jpeg" alt="Tom Yum Soup">
+                    <h3>Mee Rebus Gearbox Kambing</h3>
                     <span class="rating">⭐ 4.8</span>
                 </div>
                 
                 <div class="popular-item">
-                    <img src="assets/images/menu2.jpg" alt="Fried Rice">
-                    <h3>Fried Rice</h3>
+                    <img src="assets/images/Popular menu/Roti Sarang Burung Daging.jpeg" alt="Fried Rice">
+                    <h3>Roti Sarang Burung Daging</h3>
                     <span class="rating">⭐ 4.7</span>
                 </div>
                 
                 <div class="popular-item">
-                    <img src="assets/images/menu3.jpg" alt="Iced Lemon Tea">
-                    <h3>Iced Lemon Tea</h3>
+                    <img src="assets/images/Popular menu/Cendol.jpeg" alt="Iced Lemon Tea">
+                    <h3>Cendol</h3>
                     <span class="rating">⭐ 4.9</span>
                 </div>
                 
                 <div class="popular-item">
-                    <img src="assets/images/menu4.jpg" alt="Satay">
-                    <h3>Chicken Satay</h3>
+                    <img src="assets/images/Popular menu/Nasi Goreng Kampung.jpeg" alt="Satay">
+                    <h3>Nasi Goreng Kampung</h3>
                     <span class="rating">⭐ 4.6</span>
                 </div>
             </div>
