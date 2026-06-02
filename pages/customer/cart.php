@@ -126,7 +126,7 @@
                             <h3><i class="fas fa-concierge-bell"></i> Order Type</h3>
                             <div class="order-type-options">
                                 <label class="order-type-option">
-                                    <input type="radio" name="orderType" value="dine-in" checked>
+                                    <input type="radio" name="orderType" value="dine-in">
                                     <span class="option-content">
                                         <i class="fas fa-utensils"></i>
                                         <strong>Dine-In</strong>
@@ -134,7 +134,7 @@
                                     </span>
                                 </label>
                                 <label class="order-type-option">
-                                    <input type="radio" name="orderType" value="online">
+                                    <input type="radio" name="orderType" value="online" checked>
                                     <span class="option-content">
                                         <i class="fas fa-motorcycle"></i>
                                         <strong>Takeaway / Delivery</strong>

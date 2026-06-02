@@ -58,7 +58,8 @@ function renderCartItems(cart) {
     cartItemsList.innerHTML = cart.map((item, index) => `
         <div class="cart-item" data-index="${index}">
             <div class="cart-item-image">
-                <img src="${item.image || '../../assets/images/food-placeholder.jpg'}" alt="${item.name}" onerror="this.src='../../assets/images/food-placeholder.jpg'">
+                <img src="${item.image || ''}" alt="${item.name}" 
+                     onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<i class=\"fas fa-utensils\" style=\"font-size:1.8rem;color:#ccc;\"></i>';">
             </div>
             <div class="cart-item-details">
                 <span class="cart-item-name">${item.name}</span>
@@ -141,9 +142,7 @@ function updateCartSummary(cart) {
     document.getElementById('summaryTax').textContent = `RM ${tax.toFixed(2)}`;
     document.getElementById('summaryTotal').textContent = `RM ${total.toFixed(2)}`;
     
-    // Update checkout button
-    const btnCheckout = document.getElementById('btnCheckout');
-    btnCheckout.disabled = cart.length === 0;
+    // Checkout button is always enabled - click handler validates
 }
 
 // ========================================
@@ -202,14 +201,22 @@ function initCheckout() {
     if (!btnCheckout) return;
     
     btnCheckout.addEventListener('click', function() {
+        // Check cart is not empty
+        if (getCart().length === 0) {
+            alert('Your cart is empty! Please add items before checking out.');
+            return;
+        }
+
         const orderType = document.querySelector('input[name="orderType"]:checked');
-        
-        if (orderType && orderType.value === 'online') {
-            window.location.href = '../checkout.php';
+        const type = orderType ? orderType.value : 'online';
+
+        // Get current folder path e.g. /webapppj/pages/customer/
+        const dir = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+
+        if (type === 'online') {
+            window.location.href = dir + 'checkout.php';
         } else {
-            // Dine-in: go to table number page or directly place order
-            alert('Please scan the QR code at your table to place a dine-in order.\n\nRedirecting to QR order page...');
-            window.location.href = 'scan-order.php';
+            window.location.href = dir + 'qr-order.php';
         }
     });
 }
@@ -221,6 +228,14 @@ function initOrderType() {
     const orderTypeInputs = document.querySelectorAll('input[name="orderType"]');
     const btnCheckout = document.getElementById('btnCheckout');
     
+    // Set default button text based on default checked value
+    const defaultType = document.querySelector('input[name="orderType"]:checked')?.value;
+    if (btnCheckout) {
+        btnCheckout.innerHTML = defaultType === 'online'
+            ? '<i class="fas fa-lock"></i> Proceed to Checkout'
+            : '<i class="fas fa-qrcode"></i> Order at Table';
+    }
+
     orderTypeInputs.forEach(input => {
         input.addEventListener('change', function() {
             if (this.value === 'online') {
