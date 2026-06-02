@@ -48,7 +48,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                     <li><a href="pages/login.php" class="btn-login">Login</a></li>
                     <li><a href="pages/register.php" class="btn-register">Register</a></li>
                 <?php endif; ?>
+                <!-- For development quick access uses.-->
                 <li><a href="pages/staff/dashboard.php">Admin</a></li>
+                <li><a href="pages/customer/qr-order.php">QR order</a></li>
             </ul>
         </nav>
     </header>
