@@ -29,7 +29,7 @@
                     <div class="checkout-card">
                         <h2><i class="fas fa-truck"></i> Delivery / Pickup Details</h2>
 
-                        <form class="checkout-form" id="checkoutForm" method="POST" action="../../backend/api/orders.php">
+                        <form class="checkout-form" id="checkoutForm" method="POST" action="../../api/orders.php">
                             <input type="hidden" name="action" value="place_order">
 
                             <!-- Order Type -->
