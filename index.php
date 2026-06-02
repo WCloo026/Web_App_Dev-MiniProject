@@ -152,20 +152,29 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                 <h2>Popular Menu</h2>
                 <p>Most ordered by our customers</p>
             </div>
+            
             <div class="popular-grid">
                 <div class="popular-item">
-                    <img src="assets/images/Popular menu/Mee Rebus Gearbox Kambing.jpeg" alt="Mee Rebus Gearbox Kambing">
+                    <img src="assets/images/Popular menu/Mee Rebus Gearbox Kambing.jpeg" alt="Tom Yum Soup">
                     <h3>Mee Rebus Gearbox Kambing</h3>
                     <span class="rating">⭐ 4.8</span>
                 </div>
+                
                 <div class="popular-item">
-                    <img src="assets/images/Popular menu/Roti Sarang Burung Daging.jpeg" alt="Roti Sarang Burung Daging">
+                    <img src="assets/images/Popular menu/Roti Sarang Burung Daging.jpeg" alt="Fried Rice">
                     <h3>Roti Sarang Burung Daging</h3>
                     <span class="rating">⭐ 4.7</span>
                 </div>
+                
                 <div class="popular-item">
-                    <img src="assets/images/Popular menu/Cendol.jpeg" alt="Cendol">
+                    <img src="assets/images/Popular menu/Cendol.jpeg" alt="Iced Lemon Tea">
                     <h3>Cendol</h3>
+                    <span class="rating">⭐ 4.9</span>
+                </div>
+                
+                <div class="popular-item">
+                    <img src="assets/images/Popular menu/Nasi Goreng Kampung.jpeg" alt="Satay">
+                    <h3>Nasi Goreng Kampung</h3>
                     <span class="rating">⭐ 4.6</span>
                 </div>
             </div>
@@ -269,7 +278,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
             <a href="pages/login.php"><i class="fas fa-user"></i><span>Login</span></a>
         <?php endif; ?>
     </nav>
-
+    
+    <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
