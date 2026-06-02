@@ -37,7 +37,8 @@
             
             <!-- Table Grid -->
             <div class="tables-grid">
-                <?php for ($i = 1; $i <= 15; $i++): ?>
+                <!-- Set Maximum table HERE -->
+                <?php for ($i = 1; $i <= 30; $i++): ?> 
                 <div class="table-card <?php echo $i <= 8 ? 'occupied' : 'available'; ?>">
                     <i class="fas fa-chair"></i>
                     <span class="table-num">Table <?php echo $i; ?></span>
