@@ -26,7 +26,7 @@ try {
 } catch (PDOException $e) {
     // Redirect back with db error
     $ref = $_SERVER['HTTP_REFERER'] ?? '../pages/login.php';
-    header('Location: ' . $ref . '?error=db');
+    header('Location: ../index.php?error=db');
     exit;
 }
 
@@ -42,7 +42,7 @@ if ($action === 'login') {
     $password = $_POST['password']      ?? '';
 
     if (empty($email) || empty($password)) {
-        header('Location: ../../frontend/pages/login.php?error=required');
+        header('Location: ../pages/login.php?error=required');
         exit;
     }
 
@@ -51,7 +51,7 @@ if ($action === 'login') {
     $userData = $stmt->fetch();
 
     if (!$userData || !password_verify($password, $userData['password'])) {
-        header('Location: ../../frontend/pages/login.php?error=invalid');
+        header('Location: ../pages/login.php?error=invalid');
         exit;
     }
 
@@ -66,10 +66,10 @@ if ($action === 'login') {
     switch ($userData['role']) {
         case 'admin':
         case 'staff':
-            header('Location: ../../frontend/pages/staff/dashboard.php');
+            header('Location: ../pages/staff/dashboard.php');
             break;
         default:
-            header('Location: ../../frontend/pages/customer/dashboard.php');
+            header('Location: ../pages/customer/dashboard.php');
             break;
     }
     exit;
@@ -90,19 +90,19 @@ if ($action === 'register') {
     if (empty($fullName) || strlen($fullName) < 2 ||
         !filter_var($email, FILTER_VALIDATE_EMAIL) ||
         empty($phone) || strlen($password) < 8) {
-        header('Location: ../../frontend/pages/register.php?error=required');
+        header('Location: ../pages/register.php?error=required');
         exit;
     }
 
     if ($password !== $confirm) {
-        header('Location: ../../frontend/pages/register.php?error=mismatch');
+        header('Location: ../pages/register.php?error=mismatch');
         exit;
     }
 
     // Validate Malaysian phone
     $cleanPhone = preg_replace('/[\s\-]/', '', $phone);
     if (!preg_match('/^(01[0-9])\d{7,8}$/', $cleanPhone)) {
-        header('Location: ../../frontend/pages/register.php?error=invalid_ph');
+        header('Location: ../pages/register.php?error=invalid_ph');
         exit;
     }
 
@@ -110,7 +110,7 @@ if ($action === 'register') {
     $stmt = $pdo->prepare('SELECT id FROM users WHERE email = ?');
     $stmt->execute([$email]);
     if ($stmt->fetch()) {
-        header('Location: ../../frontend/pages/register.php?error=exists');
+        header('Location: ../pages/register.php?error=exists');
         exit;
     }
 
@@ -130,7 +130,7 @@ if ($action === 'register') {
     $_SESSION['user_role']  = 'customer';
     $_SESSION['user_phone'] = $phone;
 
-    header('Location: ../../frontend/pages/customer/dashboard.php');
+    header('Location: ../pages/customer/dashboard.php');
     exit;
 }
 
@@ -139,7 +139,7 @@ if ($action === 'register') {
 // ============================================================
 if ($action === 'logout') {
     session_destroy();
-    header('Location: ../../frontend/pages/login.php');
+    header('Location: ../index.php');
     exit;
 }
 
@@ -170,7 +170,7 @@ if ($action === 'check_session') {
 if ($action === 'update_profile') {
 
     if (!isset($_SESSION['user_id'])) {
-        header('Location: ../../frontend/pages/login.php');
+        header('Location: ../pages/login.php');
         exit;
     }
 
@@ -182,14 +182,14 @@ if ($action === 'update_profile') {
 
     if (!empty($newPass)) {
         if (strlen($newPass) < 8) {
-            header('Location: ../../frontend/pages/customer/profile.php?error=short_pw');
+            header('Location: ../pages/customer/profile.php?error=short_pw');
             exit;
         }
         $stmt = $pdo->prepare('SELECT password FROM users WHERE id = ?');
         $stmt->execute([$_SESSION['user_id']]);
         $row = $stmt->fetch();
         if (!$row || !password_verify($currentPass, $row['password'])) {
-            header('Location: ../../frontend/pages/customer/profile.php?error=wrong_pw');
+            header('Location: ../pages/customer/profile.php?error=wrong_pw');
             exit;
         }
         $hashed = password_hash($newPass, PASSWORD_BCRYPT, ['cost' => 12]);
@@ -207,10 +207,10 @@ if ($action === 'update_profile') {
     }
 
     $_SESSION['user_name'] = $fullName;
-    header('Location: ../../frontend/pages/customer/profile.php?success=1');
+    header('Location: ../pages/customer/profile.php?success=1');
     exit;
 }
 
 // ── Unknown action ───────────────────────────────────────────
-header('Location: ../../frontend/pages/login.php');
+header('Location: ../pages/login.php');
 exit;

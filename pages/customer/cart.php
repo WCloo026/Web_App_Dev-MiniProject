@@ -45,7 +45,7 @@
                 <li><a href="dashboard.php" class="btn-login">
                     <i class="fas fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?>
                 </a></li>
-                <li><a href="../../backend/api/auth.php?action=logout" class="btn-register">Logout</a></li>
+                <li><a href="../../api/auth.php?action=logout" class="btn-register">Logout</a></li>
             <?php else: ?>
                 <li><a href="../login.php" class="btn-login">Login</a></li>
                 <li><a href="../register.php" class="btn-register">Register</a></li>
