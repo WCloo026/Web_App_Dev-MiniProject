@@ -232,7 +232,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3><img src="assets/images/Logo.jpeg" alt="Logo" style="height:50px;width:auto;vertical-align:middle;"> Restoran SUP TULANG ZZ</h3>
+                    <h3><img src="assets/images/Footer-logo.jpeg" alt="Logo" style="height:50px;width:auto;vertical-align:middle;"> Restoran SUP TULANG ZZ</h3>
                     <p>Delicious food, excellent service, memorable experience.</p>
                 </div>
                 <div class="footer-section">
