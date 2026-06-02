@@ -444,3 +444,198 @@
     .scroller-display { width: 80px; height: 80px; }
     .scroller-value { font-size: 2rem; }
 }
+
+/* ========================================
+   QR ORDER HEADER FIX - Same height as index.php
+   ======================================== */
+.header-container {
+    min-height: 75px;
+}
+
+.logo-img {
+    width: 75px !important;
+    height: 75px !important;
+}
+
+.logo h1 {
+    font-size: 1.3rem !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .logo-img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .logo h1 {
+        font-size: 1rem !important;
+    }
+}
+
+/* ========================================
+   MENU SEARCH BAR
+   ======================================== */
+.menu-search {
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 var(--spacing-md);
+}
+
+.menu-search i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.menu-search input {
+    width: 100%;
+    padding: 0.9rem 3rem 0.9rem 3rem;
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    font-size: 1rem;
+    background-color: var(--bg-white);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-search input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.1);
+}
+
+.menu-search input::placeholder {
+    color: var(--text-light);
+}
+
+#searchClear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+#searchClear:hover {
+    color: var(--primary);
+}
+
+/* ========================================
+   EXPANDABLE SEARCH BAR
+   ======================================== */
+.menu-search {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+}
+
+.search-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--bg-white);
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-toggle i {
+    color: var(--primary);
+}
+
+.search-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    animation: searchExpand 0.3s ease;
+}
+
+@keyframes searchExpand {
+    from { opacity: 0; transform: scaleX(0.8); }
+    to { opacity: 1; transform: scaleX(1); }
+}
+
+.search-input-group > i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.search-input-group input {
+    width: 100%;
+    padding: 0.9rem 3rem 0.9rem 3rem;
+    border: 2px solid var(--primary);
+    border-radius: 30px;
+    font-size: 1rem;
+    background-color: var(--bg-white);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.1);
+}
+
+#searchClear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+#searchClear:hover {
+    color: var(--primary);
+}
+
+/* ========================================
+   CATEGORY FILTER - MORE BUTTON
+   ======================================== */
+.filter-more {
+    background: var(--bg-white);
+    color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.filter-more:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.more-categories {
+    display: inline;
+}
