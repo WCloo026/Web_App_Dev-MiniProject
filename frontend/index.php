@@ -44,7 +44,9 @@
                 <li><a href="pages/contact.php">Contact</a></li>
                 <li><a href="login.php" class="btn-login">Login</a></li>
                 <li><a href="register.php" class="btn-register">Register</a></li>
-                <li><a href="pages/staff/dashboard.php">Admin</a></li> <!-- For development purposes.-->
+                <!-- For development purposes.-->
+                <li><a href="pages/staff/dashboard.php">Staff</a></li>
+                <li><a href="pages/customer/qr-order.php">QR order</a></li>
             </ul>
         </nav>
     </header>

@@ -29,7 +29,7 @@
         <div class="container">
             <!-- Top Image -->
             <div class="selection-image">
-                <img src="../../assets/images/Slider/Slide1.jpeg" alt="Welcome to Restoran SUP TULANG ZZ">
+                <img src="../../assets/images/qr-order.jpeg" alt="Welcome to Restoran SUP TULANG ZZ">
             </div>
             
             <!-- Welcome Text -->
