@@ -17,10 +17,10 @@
     <!-- ========== TOP HEADER (Simplified) ========== -->
     <header class="header">
         <div class="header-container">
-            <a href="../../index.php" class="logo">
+            <div class="logo">
                 <img src="../../assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
                 <h1>Restoran SUP TULANG ZZ</h1>
-            </a>
+            </div>
         </div>
     </header>
 
@@ -104,15 +104,46 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Search Bar -->
+            <div class="menu-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="menuSearch" placeholder="Search menu...">
+                <button id="searchClear" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             
-            <!-- Category Filter -->
+            <!-- Category Filter - Strictly followed based on the Menu given in .pdf-->
             <div class="category-filter" id="categoryFilter">
                 <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="main">Main Course</button>
-                <button class="filter-btn" data-category="drinks">Drinks</button>
-                <button class="filter-btn" data-category="dessert">Desserts</button>
-                <button class="filter-btn" data-category="snacks">Snacks</button>
-                <button class="filter-btn" data-category="soup">Soup</button>
+                <button class="filter-btn" data-category="signature-sup">Sup ZZ</button>
+                <button class="filter-btn" data-category="signature-mee">Mee Rebus ZZ</button>
+                <button class="filter-btn" data-category="sarapan-panas">Sarapan Panas</button>
+                <button class="filter-btn filter-more" id="btnMore">
+                    <i class="fas fa-chevron-down"></i> More
+                </button>
+                <!-- Hidden categories -->
+                <span class="more-categories" id="moreCategories" style="display: none;">
+                    <button class="filter-btn" data-category="sarapan-roti">Roti Bakar</button>
+                    <button class="filter-btn" data-category="roti-canai">Roti Canai</button>
+                    <button class="filter-btn" data-category="set-nasi">Set Nasi</button>
+                    <button class="filter-btn" data-category="set-panas">Set Masakan</button>
+                    <button class="filter-btn" data-category="ikan-siakap">Ikan Siakap</button>
+                    <button class="filter-btn" data-category="ikan-bakar">Bakar-Bakar</button>
+                    <button class="filter-btn" data-category="alacarte-sayur">Sayur</button>
+                    <button class="filter-btn" data-category="alacarte-lauk">Lauk Thai</button>
+                    <button class="filter-btn" data-category="alacarte-tepung">Goreng Tepung</button>
+                    <button class="filter-btn" data-category="alacarte-sup">Sup Ala Thai</button>
+                    <button class="filter-btn" data-category="alacarte-tomyam">Tomyam</button>
+                    <button class="filter-btn" data-category="alacarte-meekuah">Mee Kuah</button>
+                    <button class="filter-btn" data-category="western">Western</button>
+                    <button class="filter-btn" data-category="goreng-nasi">Nasi Goreng</button>
+                    <button class="filter-btn" data-category="goreng-mee">Mee Goreng</button>
+                    <button class="filter-btn" data-category="drinks-noncoffee">Drinks</button>
+                    <button class="filter-btn" data-category="drinks-jus">Jus</button>
+                    <button class="filter-btn" data-category="drinks-dessert">Dessert</button>
+                </span>
             </div>
             
             <!-- Menu Grid -->
