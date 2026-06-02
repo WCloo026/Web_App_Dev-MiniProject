@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
+$success = isset($_GET['success']);
+$error   = $_GET['error'] ?? '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +14,16 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
-
-    <!-- ========== HEADER ========== -->
     <?php include '../../includes/header.php'; ?>
 
-    <!-- ========== PROFILE PAGE ========== -->
     <main class="dashboard-page">
         <div class="container">
             <div class="dashboard-layout">
-                <!-- Sidebar -->
                 <aside class="dashboard-sidebar">
                     <div class="sidebar-profile">
                         <div class="profile-avatar"><i class="fas fa-user-circle"></i></div>
-                        <h3>My Account</h3>
+                        <h3><?= htmlspecialchars($_SESSION['user_name']) ?></h3>
+                        <p><?= htmlspecialchars($_SESSION['user_email']) ?></p>
                     </div>
                     <nav class="sidebar-nav">
                         <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
@@ -31,71 +34,82 @@
                     </nav>
                 </aside>
 
-                <!-- Main Content -->
                 <div class="dashboard-main">
                     <div class="dashboard-header">
                         <h1>Edit Profile</h1>
                         <p>Update your personal information</p>
                     </div>
 
-                    <!-- Profile Form -->
+                    <?php if ($success): ?>
+                        <div style="background:#d4edda;border:1px solid #c3e6cb;border-radius:8px;padding:12px 16px;margin-bottom:20px;color:#155724;display:flex;align-items:center;gap:8px;">
+                            <i class="fas fa-check-circle"></i> Profile updated successfully!
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($error === 'wrong_pw'): ?>
+                        <div style="background:#fde8e8;border:1px solid #f5c6c6;border-radius:8px;padding:12px 16px;margin-bottom:20px;color:#c0392b;display:flex;align-items:center;gap:8px;">
+                            <i class="fas fa-exclamation-circle"></i> Current password is incorrect.
+                        </div>
+                    <?php endif; ?>
+
                     <div class="profile-card">
-                        <form class="profile-form" id="profileForm" method="POST" action="../../backend/api/users.php">
+                        <form class="profile-form" method="POST" action="../../backend/api/auth.php">
                             <input type="hidden" name="action" value="update_profile">
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="profileName">Full Name <span class="required">*</span></label>
+                                    <label for="fullName">Full Name <span class="required">*</span></label>
                                     <div class="input-wrapper">
                                         <i class="fas fa-user"></i>
-                                        <input type="text" id="profileName" name="fullName" placeholder="Your full name" required>
+                                        <input type="text" id="fullName" name="fullName"
+                                               value="<?= htmlspecialchars($_SESSION['user_name']) ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="profilePhone">Phone Number <span class="required">*</span></label>
+                                    <label for="phone">Phone Number</label>
                                     <div class="input-wrapper">
                                         <i class="fas fa-phone"></i>
-                                        <input type="tel" id="profilePhone" name="phone" placeholder="01X-XXXXXXX" required>
+                                        <input type="tel" id="phone" name="phone"
+                                               value="<?= htmlspecialchars($_SESSION['user_phone'] ?? '') ?>">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="profileEmail">Email Address</label>
+                                <label for="email">Email Address</label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-envelope"></i>
-                                    <input type="email" id="profileEmail" name="email" placeholder="your@email.com" readonly class="readonly-input">
+                                    <input type="email" value="<?= htmlspecialchars($_SESSION['user_email']) ?>"
+                                           readonly class="readonly-input">
                                 </div>
-                                <small class="field-note">Email address cannot be changed</small>
+                                <small class="field-note">Email cannot be changed</small>
                             </div>
 
                             <div class="form-group">
-                                <label for="profileAddress">Default Address</label>
+                                <label for="address">Default Address</label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <textarea id="profileAddress" name="address" rows="3" placeholder="Your default delivery address"></textarea>
+                                    <textarea id="address" name="address" rows="3"
+                                              placeholder="Your default delivery address"></textarea>
                                 </div>
                             </div>
 
-                            <div class="profile-section-divider">
-                                <span>Change Password (optional)</span>
-                            </div>
+                            <div class="profile-section-divider"><span>Change Password (optional)</span></div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="currentPassword">Current Password</label>
                                     <div class="input-wrapper">
                                         <i class="fas fa-lock"></i>
-                                        <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password">
-                                        <button type="button" class="toggle-password" data-target="currentPassword"><i class="fas fa-eye"></i></button>
+                                        <input type="password" id="currentPassword" name="currentPassword"
+                                               placeholder="Enter current password">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="newPassword">New Password</label>
                                     <div class="input-wrapper">
                                         <i class="fas fa-lock"></i>
-                                        <input type="password" id="newPassword" name="newPassword" placeholder="Min 8 characters">
-                                        <button type="button" class="toggle-password" data-target="newPassword"><i class="fas fa-eye"></i></button>
+                                        <input type="password" id="newPassword" name="newPassword"
+                                               placeholder="Min 8 characters">
                                     </div>
                                 </div>
                             </div>
@@ -115,24 +129,6 @@
         </div>
     </main>
 
-    <!-- ========== FOOTER ========== -->
     <?php include '../../includes/footer.php'; ?>
-
-    <script>
-        // Toggle password visibility
-        document.querySelectorAll('.toggle-password').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const target = document.getElementById(this.dataset.target);
-                const icon = this.querySelector('i');
-                if (target.type === 'password') {
-                    target.type = 'text';
-                    icon.className = 'fas fa-eye-slash';
-                } else {
-                    target.type = 'password';
-                    icon.className = 'fas fa-eye';
-                }
-            });
-        });
-    </script>
 </body>
 </html>

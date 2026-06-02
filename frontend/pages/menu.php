@@ -1,3 +1,4 @@
+<?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +44,15 @@
                 <li><a href="news-events.php">News & Events</a></li>
                 <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                <li><a href="customer/dashboard.php" class="btn-login">
+                    <i class="fas fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?>
+                </a></li>
+                <li><a href="../backend/api/auth.php?action=logout" class="btn-register">Logout</a></li>
+            <?php else: ?>
                 <li><a href="login.php" class="btn-login">Login</a></li>
                 <li><a href="register.php" class="btn-register">Register</a></li>
+            <?php endif; ?>
             </ul>
         </nav>
     </header>

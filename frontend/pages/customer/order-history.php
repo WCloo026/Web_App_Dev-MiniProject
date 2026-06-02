@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) { header('Location: ../login.php'); exit; }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +12,16 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
-
-    <!-- ========== HEADER ========== -->
     <?php include '../../includes/header.php'; ?>
 
-    <!-- ========== ORDER HISTORY PAGE ========== -->
     <main class="dashboard-page">
         <div class="container">
             <div class="dashboard-layout">
-                <!-- Sidebar -->
                 <aside class="dashboard-sidebar">
                     <div class="sidebar-profile">
                         <div class="profile-avatar"><i class="fas fa-user-circle"></i></div>
-                        <h3>My Account</h3>
+                        <h3><?= htmlspecialchars($_SESSION['user_name']) ?></h3>
+                        <p><?= htmlspecialchars($_SESSION['user_email']) ?></p>
                     </div>
                     <nav class="sidebar-nav">
                         <a href="dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
@@ -31,17 +32,15 @@
                     </nav>
                 </aside>
 
-                <!-- Main Content -->
                 <div class="dashboard-main">
                     <div class="dashboard-header">
                         <h1>Order History</h1>
                         <p>All your past orders in one place</p>
                     </div>
 
-                    <!-- Filters -->
                     <div class="history-filters">
                         <div class="filter-group">
-                            <label for="filterStatus">Status</label>
+                            <label>Status</label>
                             <select id="filterStatus">
                                 <option value="">All Status</option>
                                 <option value="completed">Completed</option>
@@ -49,11 +48,11 @@
                             </select>
                         </div>
                         <div class="filter-group">
-                            <label for="filterDateFrom">From</label>
+                            <label>From</label>
                             <input type="date" id="filterDateFrom">
                         </div>
                         <div class="filter-group">
-                            <label for="filterDateTo">To</label>
+                            <label>To</label>
                             <input type="date" id="filterDateTo">
                         </div>
                         <button class="btn-filter" id="btnApplyFilter">
@@ -61,13 +60,12 @@
                         </button>
                     </div>
 
-                    <!-- Orders Table -->
                     <div class="orders-table-wrapper">
                         <table class="orders-table">
                             <thead>
                                 <tr>
                                     <th>Order ID</th>
-                                    <th>Date & Time</th>
+                                    <th>Date &amp; Time</th>
                                     <th>Items</th>
                                     <th>Total</th>
                                     <th>Type</th>
@@ -76,7 +74,6 @@
                                 </tr>
                             </thead>
                             <tbody id="historyTableBody">
-                                <!-- Populated by PHP backend -->
                                 <tr class="table-placeholder">
                                     <td colspan="7">
                                         <i class="fas fa-history"></i>
@@ -86,18 +83,12 @@
                             </tbody>
                         </table>
                     </div>
-
-                    <!-- Pagination -->
-                    <div class="pagination" id="historyPagination">
-                        <!-- Populated by PHP -->
-                    </div>
+                    <div class="pagination" id="historyPagination"></div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- ========== FOOTER ========== -->
     <?php include '../../includes/footer.php'; ?>
-
 </body>
 </html>

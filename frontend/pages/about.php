@@ -1,3 +1,4 @@
+<?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +40,15 @@
                 <li><a href="news-events.php">News & Events</a></li>
                 <li><a href="about.php" class="active">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                <li><a href="customer/dashboard.php" class="btn-login">
+                    <i class="fas fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?>
+                </a></li>
+                <li><a href="../../backend/api/auth.php?action=logout" class="btn-register">Logout</a></li>
+            <?php else: ?>
                 <li><a href="login.php" class="btn-login">Login</a></li>
                 <li><a href="register.php" class="btn-register">Register</a></li>
+            <?php endif; ?>
             </ul>
         </nav>
     </header>
@@ -269,7 +277,11 @@
         <a href="menu.php"><i class="fas fa-utensils"></i><span>Menu</span></a>
         <a href="customer/cart.php"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
         <a href="customer/order-status.php"><i class="fas fa-receipt"></i><span>Orders</span></a>
-        <a href="../profile.php"><i class="fas fa-user"></i><span>Profile</span></a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+        <a href="customer/dashboard.php"><i class="fas fa-user"></i><span><?= htmlspecialchars($_SESSION['user_name']) ?></span></a>
+        <?php else: ?>
+        <a href="login.php"><i class="fas fa-user"></i><span>Login</span></a>
+        <?php endif; ?>
     </nav>
 
     <!-- JavaScript -->

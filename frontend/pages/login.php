@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 session_start();
 // Redirect if already logged in
@@ -96,177 +97,14 @@ if (isset($_GET['error']) && array_key_exists($_GET['error'], $errors)) {
     </style>
 </head>
 <body>
+    <?php include '../includes/header.php'; ?>
+    
 
-    <!-- ========== HEADER ========== -->
-    <header class="header">
-        <div class="header-container">
-            <a href="../../index.php" class="logo">
-                <img src="../assets/images/Logo.jpeg" alt="Restoran SUP TULANG ZZ Logo" class="logo-img">
-                <h1>Restoran SUP TULANG ZZ</h1>
-            </a>
-            <div class="header-icons">
-                <a href="customer/cart.php" class="icon-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge" id="cartBadge">0</span>
-                </a>
-                <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-        <nav class="desktop-nav" id="desktopNav">
-            <ul>
-                <li><a href="../../index.php">Home</a></li>
-                <li><a href="menu.php">Menu</a></li>
-                <li><a href="news-events.php">News &amp; Events</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="login.php" class="btn-login active">Login</a></li>
-                <li><a href="register.php" class="btn-register">Register</a></li>
-            </ul>
-        </nav>
-    </header>
+    
 
-    <!-- ========== LOGIN FORM ========== -->
-    <main class="auth-page">
-        <div class="auth-container">
-            <div class="auth-card">
-
-                <div class="auth-header">
-                    <img src="../assets/images/Logo.jpeg" alt="Logo" class="auth-logo">
-                    <h2>Welcome Back!</h2>
-                    <p>Login to place orders and track your meals</p>
-                </div>
-
-                <div class="role-hint">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Staff members: use your assigned staff credentials</span>
-                </div>
-
-                
-                <?php if ($errorMsg): ?>
-                <div class="auth-error-banner">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <span><?php echo htmlspecialchars($errorMsg); ?></span>
-                </div>
-                <?php endif; ?>
-<form class="auth-form" id="loginForm" method="POST" action="../../backend/api/auth.php">
-                    <input type="hidden" name="action" value="login">
-
-                    <div class="form-group">
-                        <label for="email">Email Address <span class="required">*</span></label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        <span class="error-message" id="emailError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password <span class="required">*</span></label>
-                        <div class="input-wrapper">
-                            <i class="fas fa-lock"></i>
-                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                            <button type="button" class="toggle-password" id="togglePwd">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                        <span class="error-message" id="passwordError"></span>
-                    </div>
-
-                    <div class="form-group remember-row">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="rememberMe" name="rememberMe">
-                            <span>Remember me</span>
-                        </label>
-                        <a href="forgot-password.php" class="forgot-link">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" class="btn-auth">
-                        <i class="fas fa-sign-in-alt"></i> Login
-                    </button>
-                </form>
-
-                <div class="auth-footer">
-                    <p>Don't have an account? <a href="register.php">Register here</a></p>
-                </div>
-
-            </div>
-        </div>
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3><img src="../assets/images/Logo.jpeg" alt="Logo" style="height:50px;width:auto;vertical-align:middle;"> Restoran SUP TULANG ZZ</h3>
-                    <p>Delicious food, excellent service, memorable experience.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="../../index.php"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="menu.php"><i class="fas fa-chevron-right"></i> Menu</a></li>
-                        <li><a href="news-events.php"><i class="fas fa-chevron-right"></i> News &amp; Events</a></li>
-                        <li><a href="about.php"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contact.php"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jalan Example, Taman Melaka Raya, 75000 Melaka</p>
-                    <p><i class="fas fa-phone"></i> 012-3456789</p>
-                    <p><i class="fas fa-envelope"></i> info@suptulangzz.com</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/en/" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Restaurant SUP TULANG ZZ. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <nav class="mobile-nav">
-        <a href="../../index.php"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="menu.php"><i class="fas fa-utensils"></i><span>Menu</span></a>
-        <a href="customer/cart.php"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
-        <a href="customer/order-status.php"><i class="fas fa-receipt"></i><span>Orders</span></a>
-        <a href="login.php" class="active"><i class="fas fa-user"></i><span>Login</span></a>
-    </nav>
+    
 
     <script src="../assets/js/validation.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const cart = JSON.parse(localStorage.getItem('restaurantCart') || '[]');
-            const count = cart.reduce((sum, i) => sum + i.quantity, 0);
-            const badge = document.getElementById('cartBadge');
-            if (badge) { badge.textContent = count; badge.style.display = count > 0 ? 'flex' : 'none'; }
-
-            const menuToggle = document.getElementById('menuToggle');
-            const desktopNav = document.getElementById('desktopNav');
-            if (menuToggle && desktopNav) {
-                menuToggle.addEventListener('click', function () {
-                    desktopNav.classList.toggle('active');
-                    this.querySelector('i').className = desktopNav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-                });
-            }
-
-            const togglePwd = document.getElementById('togglePwd');
-            const pwdInput  = document.getElementById('password');
-            if (togglePwd && pwdInput) {
-                togglePwd.addEventListener('click', function () {
-                    const show = pwdInput.type === 'password';
-                    pwdInput.type = show ? 'text' : 'password';
-                    this.querySelector('i').className = show ? 'fas fa-eye-slash' : 'fas fa-eye';
-                });
-            }
-        });
-    </script>
+    <?php include '../includes/footer.php'; ?>
 </body>
 </html>
