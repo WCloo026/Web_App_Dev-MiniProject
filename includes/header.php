@@ -47,11 +47,11 @@ if (isset($_SESSION['cart'])) {
     </div>
     <nav class="desktop-nav" id="desktopNav">
         <ul>
-            <li><a href="<?= $base ?>index.php" class="<?= isActivePage('index.php') ?>">Home</a></li>
-            <li><a href="<?= $base ?>pages/menu.php" class="<?= isActivePage('menu.php') ?>">Menu</a></li>
-            <li><a href="<?= $base ?>pages/news-events.php" class="<?= isActivePage('news-events.php') ?>">News &amp; Events</a></li>
-            <li><a href="<?= $base ?>pages/about.php" class="<?= isActivePage('about.php') ?>">About</a></li>
-            <li><a href="<?= $base ?>pages/contact.php" class="<?= isActivePage('contact.php') ?>">Contact</a></li>
+            <li><a href="<?= $base ?>frontend/index.php" class="<?= isActivePage('index.php') ?>">Home</a></li>
+            <li><a href="<?= $base ?>frontend/pages/menu.php" class="<?= isActivePage('menu.php') ?>">Menu</a></li>
+            <li><a href="<?= $base ?>frontend/pages/news-events.php" class="<?= isActivePage('news-events.php') ?>">News &amp; Events</a></li>
+            <li><a href="<?= $base ?>frontend/pages/about.php" class="<?= isActivePage('about.php') ?>">About</a></li>
+            <li><a href="<?= $base ?>frontend/pages/contact.php" class="<?= isActivePage('contact.php') ?>">Contact</a></li>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li><a href="<?= $base ?>frontend/pages/customer/dashboard.php" class="btn-login">
                     <i class="fas fa-user"></i> <?= htmlspecialchars($_SESSION['user_name']) ?>
