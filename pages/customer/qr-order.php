@@ -115,7 +115,7 @@
                 </button>
             </div>
             
-                       <!-- Category Filter - Strictly followed based on the Menu given in .pdf-->
+            <!-- Category Filter - Strictly followed based on the Menu given in .pdf-->
             <div class="category-filter" id="categoryFilter">
                 <button class="filter-btn active" data-category="all"><i class="fas fa-th-large"></i> All</button>
                 <button class="filter-btn" data-category="signature-sup"><i class="fas fa-crown"></i> Sup ZZ</button>
