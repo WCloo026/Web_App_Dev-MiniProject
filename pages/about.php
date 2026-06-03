@@ -207,7 +207,7 @@
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="../assets/images/Slider/Slide9.jpeg" alt="Chef">
+                        <img src="../assets/images/Our Team/Chef.jpeg" alt="Chef">
                     </div>
                     <h3>Chef Zulkifli</h3>
                     <span class="team-role">Founder & Head Chef</span>
@@ -215,17 +215,25 @@
                 
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="../assets/images/Slider/Slide10.jpeg" alt="Sous Chef">
+                        <img src="../assets/images/Our Team/Chef.jpeg" alt="Sous Chef">
                     </div>
-                    <h3>Chef Aminah</h3>
+                    <h3>Chef Khairul</h3>
+                    <span class="team-role">Sous Chef</span>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="../assets/images/Our Team/Chef.jpeg" alt="Sous Chef">
+                    </div>
+                    <h3>Chef Amir</h3>
                     <span class="team-role">Sous Chef</span>
                 </div>
                 
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="../assets/images/Slider/Slide11.jpeg" alt="Manager">
+                        <img src="../assets/images/Our Team/Manager.jpeg" alt="Manager">
                     </div>
-                    <h3>Mr. Rahman</h3>
+                    <h3>Ms. Aminah</h3>
                     <span class="team-role">Restaurant Manager</span>
                 </div>
             </div>

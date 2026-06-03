@@ -30,7 +30,7 @@
         <div class="container">
             <!-- Top Image -->
             <div class="selection-image">
-                <img src="../../assets/images/qr-order.jpeg" alt="Welcome to Restoran SUP TULANG ZZ">
+                <img src="../../assets/images/About 2.jpeg" alt="Welcome to Restoran SUP TULANG ZZ">
             </div>
             
             <!-- Welcome Text -->
@@ -115,35 +115,35 @@
                 </button>
             </div>
             
-            <!-- Category Filter - Strictly followed based on the Menu given in .pdf-->
+                       <!-- Category Filter - Strictly followed based on the Menu given in .pdf-->
             <div class="category-filter" id="categoryFilter">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="signature-sup">Sup ZZ</button>
-                <button class="filter-btn" data-category="signature-mee">Mee Rebus ZZ</button>
-                <button class="filter-btn" data-category="sarapan-panas">Sarapan Panas</button>
+                <button class="filter-btn active" data-category="all"><i class="fas fa-th-large"></i> All</button>
+                <button class="filter-btn" data-category="signature-sup"><i class="fas fa-crown"></i> Sup ZZ</button>
+                <button class="filter-btn" data-category="signature-mee"><i class="fas fa-crown"></i> Mee Rebus ZZ</button>
+                <button class="filter-btn" data-category="sarapan-panas"><i class="fas fa-coffee"></i> Sarapan Panas</button>
                 <button class="filter-btn filter-more" id="btnMore">
                     <i class="fas fa-chevron-down"></i> More
                 </button>
                 <!-- Hidden categories -->
                 <span class="more-categories" id="moreCategories" style="display: none;">
-                    <button class="filter-btn" data-category="sarapan-roti">Roti Bakar</button>
-                    <button class="filter-btn" data-category="roti-canai">Roti Canai</button>
-                    <button class="filter-btn" data-category="set-nasi">Set Nasi</button>
-                    <button class="filter-btn" data-category="set-panas">Set Masakan</button>
-                    <button class="filter-btn" data-category="ikan-siakap">Ikan Siakap</button>
-                    <button class="filter-btn" data-category="ikan-bakar">Bakar-Bakar</button>
-                    <button class="filter-btn" data-category="alacarte-sayur">Sayur</button>
-                    <button class="filter-btn" data-category="alacarte-lauk">Lauk Thai</button>
-                    <button class="filter-btn" data-category="alacarte-tepung">Goreng Tepung</button>
-                    <button class="filter-btn" data-category="alacarte-sup">Sup Ala Thai</button>
-                    <button class="filter-btn" data-category="alacarte-tomyam">Tomyam</button>
-                    <button class="filter-btn" data-category="alacarte-meekuah">Mee Kuah</button>
-                    <button class="filter-btn" data-category="western">Western</button>
-                    <button class="filter-btn" data-category="goreng-nasi">Nasi Goreng</button>
-                    <button class="filter-btn" data-category="goreng-mee">Mee Goreng</button>
-                    <button class="filter-btn" data-category="drinks-noncoffee">Drinks</button>
-                    <button class="filter-btn" data-category="drinks-jus">Jus</button>
-                    <button class="filter-btn" data-category="drinks-dessert">Dessert</button>
+                    <button class="filter-btn" data-category="sarapan-roti"><i class="fas fa-bread-slice"></i> Roti Bakar</button>
+                    <button class="filter-btn" data-category="roti-canai"><i class="fas fa-bread-slice"></i> Roti Canai</button>
+                    <button class="filter-btn" data-category="set-nasi"><i class="fas fa-utensils"></i> Set Nasi</button>
+                    <button class="filter-btn" data-category="set-panas"><i class="fas fa-utensils"></i> Set Masakan</button>
+                    <button class="filter-btn" data-category="ikan-siakap"><i class="fas fa-fish"></i> Ikan Siakap</button>
+                    <button class="filter-btn" data-category="ikan-bakar"><i class="fas fa-fire"></i> Bakar-Bakar</button>
+                    <button class="filter-btn" data-category="alacarte-sayur"><i class="fas fa-leaf"></i> Sayur</button>
+                    <button class="filter-btn" data-category="alacarte-lauk"><i class="fas fa-book-open"></i> Lauk Thai</button>
+                    <button class="filter-btn" data-category="alacarte-tepung"><i class="fas fa-book-open"></i> Goreng Tepung</button>
+                    <button class="filter-btn" data-category="alacarte-sup"><i class="fas fa-mug-hot"></i> Sup Ala Thai</button>
+                    <button class="filter-btn" data-category="alacarte-tomyam"><i class="fas fa-pepper-hot"></i> Tomyam</button>
+                    <button class="filter-btn" data-category="alacarte-meekuah"><i class="fas fa-book-open"></i> Mee Kuah</button>
+                    <button class="filter-btn" data-category="western"><i class="fas fa-hamburger"></i> Western</button>
+                    <button class="filter-btn" data-category="goreng-nasi"><i class="fas fa-hotdog"></i> Nasi Goreng</button>
+                    <button class="filter-btn" data-category="goreng-mee"><i class="fas fa-hotdog"></i> Mee Goreng</button>
+                    <button class="filter-btn" data-category="drinks-noncoffee"><i class="fas fa-mug-hot"></i> Drinks</button>
+                    <button class="filter-btn" data-category="drinks-jus"><i class="fas fa-glass-water"></i> Jus</button>
+                    <button class="filter-btn" data-category="drinks-dessert"><i class="fas fa-ice-cream"></i> Dessert</button>
                 </span>
             </div>
             
