@@ -260,14 +260,28 @@
     font-weight: 600;
 }
 
-.btn-update {
-    padding: 0.3rem 0.8rem;
-    background: #28A745;
+/* Complete Button */
+.btn-complete {
+    padding: 0.4rem 0.9rem;
+    background: #20B2AA;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.btn-complete:hover {
+    background: #FFFFFF;
+    color: #20B2AA;
+    border: 2px solid #20B2AA;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(32, 178, 170, 0.3);
 }
 
 .btn-edit, .btn-delete {

@@ -6,7 +6,7 @@
     <title>Manage Orders - Restoran SUP TULANG ZZ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/staff.css">
+    <link rel="stylesheet" href="../../assets/css/staff.css?v=2">
 </head>
 <body>
 
@@ -39,13 +39,6 @@
             <div class="filter-bar">
                 <input type="text" placeholder="Search orders..." class="filter-input">
                 <select class="filter-select">
-                    <option>All Status</option>
-                    <option>Pending</option>
-                    <option>Preparing</option>
-                    <option>Ready</option>
-                    <option>Completed</option>
-                </select>
-                <select class="filter-select">
                     <option>All Types</option>
                     <option>Dine-In</option>
                     <option>Online</option>
@@ -61,17 +54,16 @@
                             <th>Table</th>
                             <th>Items</th>
                             <th>Total</th>
-                            <th>Status</th>
                             <th>Time</th>
-                            <th>Update</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>#1023</td><td>Dine-In</td><td>Table 5</td><td>Nasi Lemak x2, Iced Tea x1</td><td>RM 35.00</td><td><select class="status-select"><option selected>Pending</option><option>Preparing</option><option>Ready</option><option>Completed</option></select></td><td>10:30 AM</td><td><button class="btn-update">Update</button></td></tr>
-                        <tr><td>#1024</td><td>Dine-In</td><td>Table 12</td><td>Chicken Chop x1, Tom Yum x1, Satay x2, Drinks x1</td><td>RM 62.50</td><td><select class="status-select"><option>Pending</option><option selected>Preparing</option><option>Ready</option><option>Completed</option></select></td><td>10:35 AM</td><td><button class="btn-update">Update</button></td></tr>
-                        <tr><td>#1025</td><td>Dine-In</td><td>Table 3</td><td>Sup Tulang x1, Rice x1</td><td>RM 18.00</td><td><select class="status-select"><option>Pending</option><option>Preparing</option><option selected>Ready</option><option>Completed</option></select></td><td>10:20 AM</td><td><button class="btn-update">Update</button></td></tr>
-                        <tr><td>#1026</td><td>Online</td><td>-</td><td>Nasi Goreng x2, Mango Smoothie x2</td><td>RM 45.00</td><td><select class="status-select"><option>Pending</option><option>Preparing</option><option>Ready</option><option selected>Completed</option></select></td><td>10:15 AM</td><td><button class="btn-update">Update</button></td></tr>
-                        <tr><td>#1027</td><td>Online</td><td>-</td><td>Satay x3, Cendol x1</td><td>RM 41.50</td><td><select class="status-select"><option selected>Pending</option><option>Preparing</option><option>Ready</option><option>Completed</option></select></td><td>10:40 AM</td><td><button class="btn-update">Update</button></td></tr>
+                        <tr><td>#1023</td><td>Dine-In</td><td>Table 5</td><td>Nasi Lemak x2, Iced Tea x1</td><td>RM 35.00</td><td>10:30 AM</td><td><button class="btn-complete" onclick="completeOrder(this)"><i class="fas fa-check"></i> Complete</button></td></tr>
+                        <tr><td>#1024</td><td>Dine-In</td><td>Table 12</td><td>Chicken Chop x1, Tom Yum x1, Satay x2, Drinks x1</td><td>RM 62.50</td><td>10:35 AM</td><td><button class="btn-complete" onclick="completeOrder(this)"><i class="fas fa-check"></i> Complete</button></td></tr>
+                        <tr><td>#1025</td><td>Dine-In</td><td>Table 3</td><td>Sup Tulang x1, Rice x1</td><td>RM 18.00</td><td>10:20 AM</td><td><button class="btn-complete" onclick="completeOrder(this)"><i class="fas fa-check"></i> Complete</button></td></tr>
+                        <tr><td>#1026</td><td>Online</td><td>-</td><td>Nasi Goreng x2, Mango Smoothie x2</td><td>RM 45.00</td><td>10:15 AM</td><td><button class="btn-complete" onclick="completeOrder(this)"><i class="fas fa-check"></i> Complete</button></td></tr>
+                        <tr><td>#1027</td><td>Online</td><td>-</td><td>Satay x3, Cendol x1</td><td>RM 41.50</td><td>10:40 AM</td><td><button class="btn-complete" onclick="completeOrder(this)"><i class="fas fa-check"></i> Complete</button></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -79,9 +71,20 @@
     </div>
 
     <script>
+        // Sidebar toggle
         document.getElementById('sidebarToggle').addEventListener('click', function() {
             document.getElementById('staffSidebar').classList.toggle('open');
         });
+
+        // Complete order - remove row with fade effect
+        function completeOrder(btn) {
+            const row = btn.closest('tr');
+            row.style.transition = 'opacity 0.3s ease';
+            row.style.opacity = '0';
+            setTimeout(() => {
+                row.remove();
+            }, 300);
+        }
     </script>
 </body>
 </html>
