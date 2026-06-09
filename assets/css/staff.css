@@ -416,3 +416,231 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* ========================================
+   TABLE DETAIL MODAL
+   ======================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    animation: fadeInUp 0.3s ease;
+}
+
+.table-detail-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.table-detail-modal .modal-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #999;
+    padding: 0.3rem;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.table-detail-qr {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.table-detail-qr img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.qr-label {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.table-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Table QR in card */
+.table-qr {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.table-qr img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   ADD TABLE MODAL
+   ======================================== */
+.add-table-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.add-table-modal .modal-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.add-table-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.add-table-form label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.add-table-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.add-table-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.add-table-form .required {
+    color: #e74c3c;
+}
+
+.add-table-form .error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    min-height: 1.2em;
+}
+
+.form-hint {
+    background: #f0f8ff;
+    border-left: 4px solid #4A90D9;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-hint i {
+    color: #4A90D9;
+}
+
+.btn-confirm {
+    padding: 0.7rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.btn-confirm:hover {
+    background: var(--primary-dark);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.btn-cancel {
+    padding: 0.7rem 1.5rem;     
+    background: #f5f5f5;
+    color: #666666; 
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.btn-cancel:hover {
+    background: #e0e0e0;     
+}
