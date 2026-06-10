@@ -2,14 +2,14 @@
 // ============================================================
 // auth.php — Authentication API
 // Restoran SUP TULANG ZZ
-// Database: dbstzz_2026
+// Database: restaurant_oms
 // ============================================================
 
 session_start();
 
 // ── Database Connection ──────────────────────────────────────
 $host   = 'localhost';
-$dbname = 'dbstzz_2026';
+$dbname = 'restaurant_oms';
 $user   = 'root';
 $pass   = '';   // XAMPP default
 
