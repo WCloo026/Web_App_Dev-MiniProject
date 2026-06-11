@@ -6,7 +6,7 @@
     <title>Manage Menu - Restoran SUP TULANG ZZ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/staff.css">
+    <link rel="stylesheet" href="../../assets/css/staff.css?v=2">
 </head>
 <body>
 
@@ -33,7 +33,6 @@
         <main class="staff-main">
             <div class="staff-header">
                 <h1>Manage Menu</h1>
-                <button class="btn-add"><i class="fas fa-plus"></i> Add New Item</button>
             </div>
             
             <div class="table-responsive">
@@ -48,21 +47,40 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr><td><img src="../../assets/images/food1.jpg" class="menu-thumb"></td><td>Nasi Lemak</td><td>Main Course</td><td>RM 8.00</td><td><span class="status-badge available">Available</span></td><td><button class="btn-edit"><i class="fas fa-edit"></i></button> <button class="btn-delete"><i class="fas fa-trash"></i></button></td></tr>
-                        <tr><td><img src="../../assets/images/food2.jpg" class="menu-thumb"></td><td>Chicken Chop</td><td>Main Course</td><td>RM 15.00</td><td><span class="status-badge available">Available</span></td><td><button class="btn-edit"><i class="fas fa-edit"></i></button> <button class="btn-delete"><i class="fas fa-trash"></i></button></td></tr>
-                        <tr><td><img src="../../assets/images/food3.jpg" class="menu-thumb"></td><td>Mango Smoothie</td><td>Drinks</td><td>RM 6.50</td><td><span class="status-badge available">Available</span></td><td><button class="btn-edit"><i class="fas fa-edit"></i></button> <button class="btn-delete"><i class="fas fa-trash"></i></button></td></tr>
-                        <tr><td><img src="../../assets/images/menu3.jpg" class="menu-thumb"></td><td>Sup Tulang Gearbox</td><td>Main Course</td><td>RM 22.00</td><td><span class="status-badge unavailable">Unavailable</span></td><td><button class="btn-edit"><i class="fas fa-edit"></i></button> <button class="btn-delete"><i class="fas fa-trash"></i></button></td></tr>
+                    <tbody id="menuTableBody">
+                        <!-- Loaded by JS -->
                     </tbody>
                 </table>
             </div>
         </main>
     </div>
 
+    <!-- Shared Menu Data -->
+    <script src="../../assets/js/menu.js?v=2"></script>
     <script>
+        // Sidebar toggle
         document.getElementById('sidebarToggle').addEventListener('click', function() {
             document.getElementById('staffSidebar').classList.toggle('open');
         });
+
+        // Render menu table
+        const tbody = document.getElementById('menuTableBody');
+        tbody.innerHTML = menuData.map((item, index) => {
+            const imgNum = index + 1; // item1.png, item2.png, ...
+            return `
+                <tr>
+                    <td><img src="../../assets/images/menu-image/item${imgNum}.png" class="menu-thumb" alt="${item.name}" onerror="this.src='../../assets/images/menu-image/placeholder.png'"></td>
+                    <td>${item.name}</td>
+                    <td>${item.category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</td>
+                    <td>RM ${item.price.toFixed(2)}</td>
+                    <td><span class="status-badge available">Available</span></td>
+                    <td>
+                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
+            `;
+        }).join('');
     </script>
 </body>
 </html>
