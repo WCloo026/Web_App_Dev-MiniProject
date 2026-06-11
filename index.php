@@ -247,9 +247,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jalan Example, Melaka</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jalan Example, Taman Melaka Raya, 75000 Melaka</p>
                     <p><i class="fas fa-phone"></i> 012-3456789</p>
-                    <p><i class="fas fa-envelope"></i> info@restaurant.com</p>
+                    <p><i class="fas fa-envelope"></i> info@suptulangzz.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
