@@ -1400,3 +1400,32 @@ img {
     gap: 0.5rem;
     margin-bottom: var(--spacing-lg);
 }
+
+/* Toggle Button */
+.btn-toggle {
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 2.0rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-toggle.available {
+    color: #20B2AA;
+}
+
+.btn-toggle.available:hover {
+    color: #1A8F88;
+    transform: scale(1.15);
+}
+
+.btn-toggle.unavailable {
+    color: #DC3545;
+}
+
+.btn-toggle.unavailable:hover {
+    color: #C82333;
+    transform: scale(1.15);
+}

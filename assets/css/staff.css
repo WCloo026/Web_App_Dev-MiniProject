@@ -210,7 +210,7 @@
     padding: 0.8rem;
     text-align: left;
     border-bottom: 1px solid #eee;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .staff-table th {
@@ -222,7 +222,7 @@
 .status-badge {
     padding: 0.25rem 0.7rem;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     font-weight: 600;
 }
 

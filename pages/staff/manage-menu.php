@@ -35,6 +35,14 @@
                 <h1>Manage Menu</h1>
             </div>
             
+            <!-- Search Menu Bar -->
+            <div class="filter-bar">
+                <input type="text" id="menuSearch" placeholder="Search menu..." class="filter-input" style="width: 300px;">
+                <button id="searchClear" style="display: none; background: none; border: none; cursor: pointer; color: #999;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
             <div class="table-responsive">
                 <table class="staff-table">
                     <thead>
@@ -63,24 +71,70 @@
             document.getElementById('staffSidebar').classList.toggle('open');
         });
 
-        // Render menu table
+        // Render menu table with toggle
         const tbody = document.getElementById('menuTableBody');
         tbody.innerHTML = menuData.map((item, index) => {
-            const imgNum = index + 1; // item1.png, item2.png, ...
+            const imgNum = index + 1;
             return `
                 <tr>
-                    <td><img src="../../assets/images/menu-image/item${imgNum}.png" class="menu-thumb" alt="${item.name}" onerror="this.src='../../assets/images/menu-image/placeholder.png'"></td>
+                    <td><img src="../../assets/images/menu-image/item${imgNum}.png" class="menu-thumb" alt="${item.name}" onerror="this.style.display='none'"></td>
                     <td>${item.name}</td>
                     <td>${item.category.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</td>
                     <td>RM ${item.price.toFixed(2)}</td>
-                    <td><span class="status-badge available">Available</span></td>
+                    <td><span class="status-badge available" id="status-${item.id}">Available</span></td>
                     <td>
-                        <button class="btn-edit"><i class="fas fa-edit"></i></button>
-                        <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                        <button class="btn-toggle available" id="btn-${item.id}" onclick="toggleStatus(${item.id})">
+                            <i class="fas fa-toggle-on"></i>
+                        </button>
                     </td>
                 </tr>
             `;
         }).join('');
+
+        // Toggle function
+        function toggleStatus(id) {
+            const badge = document.getElementById('status-' + id);
+            const btn = document.getElementById('btn-' + id);
+            const isAvailable = badge.classList.contains('available');
+            
+            if (isAvailable) {
+                badge.classList.remove('available');
+                badge.classList.add('unavailable');
+                badge.textContent = 'Out of Stock';
+                btn.classList.remove('available');
+                btn.classList.add('unavailable');
+                btn.innerHTML = '<i class="fas fa-toggle-off"></i>';
+            } else {
+                badge.classList.remove('unavailable');
+                badge.classList.add('available');
+                badge.textContent = 'Available';
+                btn.classList.remove('unavailable');
+                btn.classList.add('available');
+                btn.innerHTML = '<i class="fas fa-toggle-on"></i>';
+            }
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('menuSearch');
+        const searchClear = document.getElementById('searchClear');
+        
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            searchClear.style.display = query ? 'block' : 'none';
+            
+            const rows = tbody.querySelectorAll('tr');
+            rows.forEach(row => {
+                const name = row.cells[1].textContent.toLowerCase();
+                const category = row.cells[2].textContent.toLowerCase();
+                row.style.display = (name.includes(query) || category.includes(query)) ? '' : 'none';
+            });
+        });
+        
+        searchClear.addEventListener('click', function() {
+            searchInput.value = '';
+            this.style.display = 'none';
+            tbody.querySelectorAll('tr').forEach(row => row.style.display = '');
+        });
     </script>
 </body>
 </html>
