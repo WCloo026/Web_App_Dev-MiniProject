@@ -1,4 +1,4 @@
-# 🍽️ Restaurant Order Management System
+# 🍽️ Restaurant SUP TUALNG ZZ Order Management System
 
 A web-based restaurant order management system for both walk-in and online customers.
 
