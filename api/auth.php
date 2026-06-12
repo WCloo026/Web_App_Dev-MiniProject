@@ -2,14 +2,14 @@
 // ============================================================
 // auth.php — Authentication API
 // Restoran SUP TULANG ZZ
-// Database: dbstzz_2026
+// Database: restaurant_oms
 // ============================================================
 
 session_start();
 
 // ── Database Connection ──────────────────────────────────────
 $host   = 'localhost';
-$dbname = 'dbstzz_2026';
+$dbname = 'restaurant_oms';
 $user   = 'root';
 $pass   = '';   // XAMPP default
 
@@ -65,9 +65,9 @@ if ($action === 'login') {
 
     // ── Redirect by role ──
     switch ($userData['role']) {
+
         case 'admin':
-        case 'staff':
-            header('Location: ../pages/admin/dashboard.php');
+            header('Location: ../pages/staff/dashboard.php');
             break;
         default:
             header('Location: ../pages/customer/dashboard.php');
