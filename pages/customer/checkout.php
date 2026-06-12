@@ -351,10 +351,6 @@
                                 <label>Order Type <span class="required">*</span></label>
                                 <div class="order-type-toggle">
                                     <label class="order-type-btn">
-                                        <input type="radio" name="orderType" value="dine-in" id="typeDineIn">
-                                        <span><i class="fas fa-utensils"></i> Dine-In</span>
-                                    </label>
-                                    <label class="order-type-btn">
                                         <input type="radio" name="orderType" value="takeaway" id="typeTakeaway">
                                         <span><i class="fas fa-shopping-bag"></i> Takeaway</span>
                                     </label>
