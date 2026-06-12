@@ -334,11 +334,18 @@ function initSearch() {
 function addToCartHandler(id, name, price, image) {
     const cart = JSON.parse(localStorage.getItem('restaurantCart') || '[]');
     
+    // Convert relative image path to absolute URL so it works from any page depth
+    // e.g. "../assets/images/menu-image/item1.png" (relative to pages/)
+    // becomes "/webapppj/assets/images/menu-image/item1.png"
+    const absoluteImage = image
+        ? new URL(image, window.location.href).pathname
+        : '';
+    
     const existingItem = cart.find(item => item.id === id);
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({ id, name, price, image, quantity: 1 });
+        cart.push({ id, name, price, image: absoluteImage, quantity: 1 });
     }
     
     localStorage.setItem('restaurantCart', JSON.stringify(cart));
