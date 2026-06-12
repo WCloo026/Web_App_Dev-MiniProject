@@ -56,23 +56,9 @@
                         </button>
                     </div>
                 </div>
-                
-                <!-- Pax Scroller -->
-                <div class="scroller-group">
-                    <label>Number of Guests</label>
-                    <div class="scroller-wrapper">
-                        <button class="scroller-btn scroller-up" data-target="pax">
-                            <i class="fas fa-chevron-up"></i>
-                        </button>
-                        <div class="scroller-display">
-                            <span class="scroller-value" id="paxValue">1</span>
-                        </div>
-                        <button class="scroller-btn scroller-down" data-target="pax">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
+                
+                
             
             <!-- Dine In Button -->
             <div class="dinein-btn-container">

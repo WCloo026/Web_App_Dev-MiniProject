@@ -39,10 +39,7 @@
             </nav>
             
             <div class="sidebar-footer">
-                <a href="../../index.php" class="nav-item">
-                    <i class="fas fa-home"></i> Back to Home <!-- For development purposes (easy to navigate to Homepage)-->
-                </a>
-                <a href="../../index.php" class="nav-item"> 
+                <a href="../../api/auth.php?action=logout" class="nav-item"> 
                     <i class="fas fa-sign-out-alt"></i> Logout <!-- For development purposes (easy to navigate to Homepage) will update to logout page-->
                 </a>
             </div>

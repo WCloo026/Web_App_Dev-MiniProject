@@ -103,6 +103,25 @@ if (!isset($_SESSION['user_id'])) {
         .stat-value { display: block; font-size: 1.6rem; font-weight: 800; color: #2c3e50; line-height: 1; }
         .stat-label { font-size: 0.78rem; color: #999; margin-top: 4px; display: block; }
 
+        .address-card .address-text {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.6;
+            background: #fdf6f0;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border-left: 3px solid #c0392b;
+        }
+        .address-card .address-empty {
+            font-size: 0.875rem;
+            color: #999;
+            padding: 14px 16px;
+            background: #fafafa;
+            border-radius: 10px;
+            border: 1px dashed #e8e0d8;
+            text-align: center;
+        }
+
         /* ── Dashboard Sections ── */
         .dashboard-section {
             background: #fff;
@@ -269,6 +288,25 @@ if (!isset($_SESSION['user_id'])) {
                                 <span class="stat-label">Total Spent</span>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Delivery Address -->
+                    <div class="dashboard-section address-card">
+                        <div class="section-title-row">
+                            <h2><i class="fas fa-map-marker-alt" style="color:#c0392b;margin-right:8px;"></i>Delivery Address</h2>
+                            <a href="profile.php" class="view-all-link">
+                                <i class="fas fa-pen"></i> Edit
+                            </a>
+                        </div>
+                        <?php if (!empty($_SESSION['user_address'])): ?>
+                            <p class="address-text"><?= nl2br(htmlspecialchars($_SESSION['user_address'])) ?></p>
+                        <?php else: ?>
+                            <p class="address-empty">
+                                No address saved yet.
+                                <a href="profile.php" style="color:#c0392b;font-weight:600;">Add your address</a>
+                                to enable faster delivery checkout.
+                            </p>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Recent Orders -->

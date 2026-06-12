@@ -61,6 +61,7 @@ if ($action === 'login') {
     $_SESSION['user_email'] = $userData['email'];
     $_SESSION['user_role']  = $userData['role'];
     $_SESSION['user_phone'] = $userData['phone'];
+    $_SESSION['user_address'] = $userData['address'] ?? '';
 
     // ── Redirect by role ──
     switch ($userData['role']) {
@@ -206,7 +207,9 @@ if ($action === 'update_profile') {
         $stmt->execute([$fullName, $phone, $address, $_SESSION['user_id']]);
     }
 
-    $_SESSION['user_name'] = $fullName;
+    $_SESSION['user_name']    = $fullName;
+    $_SESSION['user_phone']   = $phone;
+    $_SESSION['user_address'] = $address;
     header('Location: ../pages/customer/profile.php?success=1');
     exit;
 }

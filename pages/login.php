@@ -2,7 +2,11 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 if (isset($_SESSION['user_id'])) {
     $role = $_SESSION['user_role'] ?? 'customer';
-    header('Location: ' . ($role === 'admin' || $role === 'staff' ? 'staff/dashboard.php' : 'customer/dashboard.php'));
+    if ($role === 'admin') {
+        header('Location: admin/dashboard.php');
+    } else {
+        header('Location: customer/dashboard.php');
+    }
     exit;
 }
 $errors = [

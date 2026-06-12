@@ -47,17 +47,8 @@
 }
 
 /* Scrollers */
-.scrollers-container {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
-    flex-wrap: wrap;
-}
-
-.scroller-group {
-    text-align: center;
-}
+.scrollers-container { display: flex; justify-content: center; align-items: center; text-align: center; }
+.scroller-group { display: flex; flex-direction: column; align-items: center; }
 
 .scroller-group label {
     display: block;
