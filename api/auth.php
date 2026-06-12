@@ -2,14 +2,14 @@
 // ============================================================
 // auth.php — Authentication API
 // Restoran SUP TULANG ZZ
-// Database: restaurant_oms
+// Database: dbstzz_2026
 // ============================================================
 
 session_start();
 
 // ── Database Connection ──────────────────────────────────────
 $host   = 'localhost';
-$dbname = 'restaurant_oms';
+$dbname = 'dbstzz_2026';
 $user   = 'root';
 $pass   = '';   // XAMPP default
 
@@ -26,7 +26,7 @@ try {
 } catch (PDOException $e) {
     // Redirect back with db error
     $ref = $_SERVER['HTTP_REFERER'] ?? '../pages/login.php';
-    header('Location: ../index.php?error=db');
+    header('Location: ../pages/login.php?error=db');
     exit;
 }
 
@@ -67,7 +67,7 @@ if ($action === 'login') {
     switch ($userData['role']) {
         case 'admin':
         case 'staff':
-            header('Location: ../pages/staff/dashboard.php');
+            header('Location: ../pages/admin/dashboard.php');
             break;
         default:
             header('Location: ../pages/customer/dashboard.php');
@@ -140,7 +140,7 @@ if ($action === 'register') {
 // ============================================================
 if ($action === 'logout') {
     session_destroy();
-    header('Location: ../index.php');
+    header('Location: ../pages/login.php');
     exit;
 }
 
