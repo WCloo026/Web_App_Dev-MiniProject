@@ -13,12 +13,16 @@ This system handles:
 ## 🛠️ Tech Stack
 <a href="https://html.com/">
 <img width="50" height="50" alt="html5" src="https://github.com/user-attachments/assets/f210e446-b6cc-4b5b-ab49-a8a8b2302eb3"/></a>
-<img width="50" height="50" alt="css" src="https://github.com/user-attachments/assets/e251405c-3362-4e37-aa6d-87e75553d124"/>
-<a href="https://www.javascript.com/">
+<a href="https://www.w3schools.com/css/">
+<img width="50" height="50" alt="css" src="https://github.com/user-attachments/assets/e251405c-3362-4e37-aa6d-87e75553d124"/></a>
+<a href="https://www.w3schools.com/js/">
 <img width="50" height="50" alt="javascript" src="https://github.com/user-attachments/assets/8958ad3a-e3e7-4540-acd2-aaec8f36674c"/></a>
-<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/php/default.svg" alt="PHP" width="50" height="50"/>
-<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/laravel/default.svg" alt="Laravel" width="50" height="50"/>
-<img width="50" height="50" alt="mysql-wordmark-light" src="https://github.com/user-attachments/assets/d2deee4c-995c-41f1-9ab4-042c648f3f17"/>
+<a href="https://www.php.net/">
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/php/default.svg" alt="PHP" width="50" height="50"/></a>
+<a href="https://laravel.com/">
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/laravel/default.svg" alt="Laravel" width="50" height="50"/></a>
+<a href="https://www.mysql.com/">
+<img width="50" height="50" alt="mysql-wordmark-light" src="https://github.com/user-attachments/assets/d2deee4c-995c-41f1-9ab4-042c648f3f17"/></a>
 <table>
         <thead>
             <tr>
