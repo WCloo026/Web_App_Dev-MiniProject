@@ -23,6 +23,8 @@ This system handles:
 <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/laravel/default.svg" alt="Laravel" width="50" height="50"/></a>
 <a href="https://www.mysql.com/">
 <img width="50" height="50" alt="mysql-wordmark-light" src="https://github.com/user-attachments/assets/d2deee4c-995c-41f1-9ab4-042c648f3f17"/></a>
+<a href="https://www.apachefriends.org/">
+<img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/xampp/default.svg" alt="XAMPP" width="50" height="50"/></a>
 <table>
         <thead>
             <tr>
